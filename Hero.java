@@ -5,17 +5,17 @@ public class Hero {
     int attack;
 	int defence;
 	int money;
-	int exprence;
+	int experience;
 	int yellowkey;
 	int bluekey;
 	int redkey;
     Hero(){
     	level = 1;
-    	hp=500;
+    	hp=1000;
     	attack =50;
     	defence = 30;
     	money = 0;
-    	exprence = 0;
+    	experience = 0;
     	yellowkey = 0;
     	bluekey = 0;
     	redkey = 0;
@@ -32,8 +32,12 @@ public class Hero {
     int getmoney() {
 		return money;
 	}
-    int getexprence() {
-		return exprence;
+    int getexperience() {
+		return experience;
 	}
+    public void printstate() {
+    	System.out.println("  hp:  "+this.hp+"    "+"  money:  "+this.money+"    "+"  experience:  "+this.experience+"    ");
+    	
+    }
     
 }

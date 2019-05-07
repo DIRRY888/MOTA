@@ -115,8 +115,10 @@ public class MyPanel extends JPanel implements KeyListener{
     private int pack = 1;
     Hero hero = new Hero();
     ArrayList<Animal> list = new ArrayList<Animal>();
-    Animal animal1 = new Animal("black guard", 1,300,30,20,50,50);
-	Animal animal2 = new Animal("black guard", 2,400,60,50,70,80);
+    //Animal animal1 = new Animal("black guard", 1,300,30,20,50,50);
+	//Animal animal2 = new Animal("black guard", 2,400,60,50,70,80);	
+	
+   
     
     
 	public MyPanel() {
@@ -129,17 +131,16 @@ public class MyPanel extends JPanel implements KeyListener{
     	count = 0;
     	setFocusable(true);
     	addKeyListener(this);
+    	Hero hero = new Hero();
+    	init();
+    	//list.add(animal1);
+    	//list.add(animal2);
     	
     	threadAnime = new Thread(new AnimationThread());
     	threadAnime.start();
     	//print();
     	
-    	Hero hero = new Hero();
-    	Animal animal1 = new Animal("black guard", 1,300,30,20,50,50);
-    	Animal animal2 = new Animal("black guard", 2,400,60,50,70,80);
-    	ArrayList<Animal> list = new ArrayList<Animal>();
-    	list.add(animal1);
-    	list.add(animal2);
+    	
     	
     }
     
@@ -481,11 +482,12 @@ public class MyPanel extends JPanel implements KeyListener{
 		int animalhp = list.get(0).gethp();
 		if(x==14) {
 		   heroinjure =  list.get(0).getattack()-hero.getdefence();
-		   animalinjure =  hero.getattack()-list.get(1).getdefence();
+		   animalinjure =  hero.getattack()-list.get(0).getdefence();
 		   hero.hp = hero.gethp()-heroinjure;
 		   animalhp = animalhp-animalinjure;
-		   
-		   
+		   hero.money = hero.getmoney()+list.get(0).getmoney();
+		   hero.experience = hero.getexperience()+list.get(0).getexperience();
+		   hero.printstate();
 		}
 	
 		
@@ -526,10 +528,10 @@ public class MyPanel extends JPanel implements KeyListener{
     
     }
     public void init(){
-    	Hero hero = new Hero();
+    	//Hero hero = new Hero();
     	Animal animal1 = new Animal("black guard", 1,300,30,20,50,50);
     	Animal animal2 = new Animal("black guard", 2,400,60,50,70,80);
-    	ArrayList<Animal> list = new ArrayList<Animal>();
+    	//ArrayList<Animal> list = new ArrayList<Animal>();
     	list.add(animal1);
     	list.add(animal2);
     	
