@@ -11,10 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
-
-
-
 public class MyPanel extends JPanel implements KeyListener{
     private static final long serialVersionUID = 1L;
     private static final int WIDTH = 480;
@@ -77,7 +73,6 @@ public class MyPanel extends JPanel implements KeyListener{
     		
     	}
     };
-    
     
     private java.awt.Image floorImage;
     private java.awt.Image wallImage;
@@ -525,7 +520,6 @@ public class MyPanel extends JPanel implements KeyListener{
     	    JOptionPane.showMessageDialog(this,"You can go everywhere");	   
     	    ischoose = true;
     	    showfly = true;	
-    
     }
     public void init(){
     	//Hero hero = new Hero();
@@ -534,15 +528,5 @@ public class MyPanel extends JPanel implements KeyListener{
     	//ArrayList<Animal> list = new ArrayList<Animal>();
     	list.add(animal1);
     	list.add(animal2);
-    	
-    	
     }
-	
- 
-    
-       
-    
-    
-    
-    
 }   

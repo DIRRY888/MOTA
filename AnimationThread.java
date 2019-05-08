@@ -10,8 +10,6 @@ public class AnimationThread extends Thread implements Runnable {
 			}else if(count==1) {
 				count = 0;
 			}
-			
-			
 			repaint();
 			try {
 				Thread.sleep(300);
@@ -19,7 +17,6 @@ public class AnimationThread extends Thread implements Runnable {
 				e.printStackTrace();
 			}
 		}
-
 	}
 
 	private void repaint() {
