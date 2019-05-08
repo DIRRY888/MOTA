@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 
 public class MyPanel extends JPanel implements KeyListener{
     private static final long serialVersionUID = 1L;
-    private static final int WIDTH = 680;
-    private static final int HEIGHT = 480;
+    public static final int WIDTH = 480;
+    public static final int HEIGHT = 480;
     private static final int ROW = 15;
     private static final int COL = 15;
     private static final int CS = 32;
@@ -520,6 +520,7 @@ public class MyPanel extends JPanel implements KeyListener{
     	    JOptionPane.showMessageDialog(this,"You can go everywhere");	   
     	    ischoose = true;
     	    showfly = true;	
+    
     }
     public void init(){
     	//Hero hero = new Hero();
