@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class MyPanel extends JPanel implements KeyListener{
     private static final long serialVersionUID = 1L;
-    private static final int WIDTH = 480;
+    private static final int WIDTH = 680;
     private static final int HEIGHT = 480;
     private static final int ROW = 15;
     private static final int COL = 15;
