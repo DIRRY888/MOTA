@@ -5,17 +5,18 @@ import javax.swing.JFrame;
 
 public class Window extends JFrame {
   public Window() {
-	  setTitle(" Magic Tower");
 	  MyPanel panel = new MyPanel();
 	  Container contentPane = getContentPane();
 	  contentPane.add(panel);
 	  pack();
-	  
   } 
 
 public static void main(String[] args) {
-	  Window e1 = new Window();
-	  e1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	  e1.setVisible(true);
+	  Window mainWindow = new Window();
+	  mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  mainWindow.setTitle(" Let's Rush Out ");
+	  mainWindow.setVisible(true);
+	  mainWindow.setLocationRelativeTo(null);
+	  mainWindow.setResizable(false);
   }
 }  

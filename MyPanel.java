@@ -11,14 +11,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
-
-
-
 public class MyPanel extends JPanel implements KeyListener{
     private static final long serialVersionUID = 1L;
-    private static final int WIDTH = 480;
-    private static final int HEIGHT = 480;
+    public static final int WIDTH = 480;
+    public static final int HEIGHT = 480;
     private static final int ROW = 15;
     private static final int COL = 15;
     private static final int CS = 32;
@@ -77,7 +73,6 @@ public class MyPanel extends JPanel implements KeyListener{
     		
     	}
     };
-    
     
     private java.awt.Image floorImage;
     private java.awt.Image wallImage;
@@ -534,15 +529,5 @@ public class MyPanel extends JPanel implements KeyListener{
     	//ArrayList<Animal> list = new ArrayList<Animal>();
     	list.add(animal1);
     	list.add(animal2);
-    	
-    	
     }
-	
- 
-    
-       
-    
-    
-    
-    
 }   
