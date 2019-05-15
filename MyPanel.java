@@ -351,7 +351,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		floorImage = icon.getImage();
 		icon = new ImageIcon(getClass().getResource("image/wall.jpg"));
 		wallImage = icon.getImage();
-		icon = new ImageIcon(getClass().getResource("image/i.jpg"));
+		icon = new ImageIcon(getClass().getResource("image/hero1.jpg"));
 		heroImage = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/bluekey.jpg"));
 		bluekeyImage = icon.getImage();
