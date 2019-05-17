@@ -1,4 +1,3 @@
-package interfaces;
 
 import java.awt.Color;
 import java.awt.Container;

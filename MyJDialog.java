@@ -1,4 +1,3 @@
-package interfaces;
 
 import javax.swing.JDialog;
 
