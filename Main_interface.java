@@ -16,13 +16,13 @@ public class Main_interface extends JFrame {
 		JFrame frame = new JFrame("Let's Rush Out!");
 		Container container = frame.getContentPane();
 		container.setBackground(Color.black);
-		frame.setBounds(0, 0, 750, 750);
+		frame.setBounds(0, 0, 480, 480);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 //		Draw draw = new Draw();
 
 		JButton button1 = new JButton(); // "start game"
-		button1.setIcon(new ImageIcon("Start Game"));
+		button1.setIcon(new ImageIcon("¿ªÊ¼ÓÎÏ·.png")); // "Start Game"
 		button1.setBounds(500, 490, 150, 40);
 		JButton button2 = new JButton("Load Game"); // "Load Game"
 		button2.setBounds(500, 550, 150, 40);
@@ -30,8 +30,8 @@ public class Main_interface extends JFrame {
 		button3.setBounds(500, 610, 150, 40);
 
 		container.add(button1);
-		container.add(button2);
-		container.add(button3);
+//		container.add(button2);
+//		container.add(button3);
 //		container.add(label);
 
 		button1.addActionListener(new ActionListener() {

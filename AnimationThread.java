@@ -1,8 +1,6 @@
 
 public class AnimationThread extends Thread implements Runnable {
 
-    private Thread threadAnime;
-	
 	public void run() {
 		while(true) {
 			if(MyPanel.count==0) {
@@ -33,13 +31,5 @@ public class AnimationThread extends Thread implements Runnable {
 
 	}
 
-	private void repaint() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-
-	
-
+	private void repaint() {}
 }

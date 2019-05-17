@@ -5,22 +5,19 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
-import java.util.Vector;
-
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
-
-
-
 
 public class MyPanel extends JPanel implements KeyListener{
     private static final long serialVersionUID = 1L;
     private static final int WIDTH = 480;
     private static final int HEIGHT = 480;
+    // the number of row
     private static final int ROW = 15;
+    // the number of column
     private static final int COL = 15;
+    // the size of very grid
     private static final int CS = 32;
    
     
@@ -158,19 +155,18 @@ public class MyPanel extends JPanel implements KeyListener{
     private Thread threadAnime;
     private int direction;
     
-    private int level; /*level of tower*/
+    // the level of floor
+    private int level; 
     private boolean ischoose = false;
     private boolean showfly=false;
     private boolean canmove = true;
     private boolean fight = true;
     private int pack = 1;
+    
     Hero hero = new Hero();
     ArrayList<Animal> list = new ArrayList<Animal>();
     //Animal animal1 = new Animal("black guard", 1,300,30,20,50,50);
 	//Animal animal2 = new Animal("black guard", 2,400,60,50,70,80);	
-	
-   
-    
     
 	public MyPanel() {
     	setPreferredSize(new Dimension(WIDTH,HEIGHT));
@@ -182,17 +178,10 @@ public class MyPanel extends JPanel implements KeyListener{
     	count = 0;
     	setFocusable(true);
     	addKeyListener(this);
-    	Hero hero = new Hero();
     	init();
-    	//list.add(animal1);
-    	//list.add(animal2);
     	
     	threadAnime = new Thread(new AnimationThread());
     	threadAnime.start();
-    	//print();
-    	
-    	
-    	
     }
     
     public void paintComponent(Graphics g) {
@@ -235,12 +224,12 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 	private void drawFly(Graphics g) {
 		canmove = false;
-		String string1 = new String("");
-		String string2 = new String("");
-		String string3 = new String("");
-		String string4 = new String("");
-		String string5 = new String("");
-		String string6 = new String("");
+		String string1 = new String();
+		String string2 = new String();
+		String string3 = new String();
+		String string4 = new String();
+		String string5 = new String();
+		String string6 = new String();
 		
 		g.setColor(Color.BLACK);
 		g.fillRect(60, 45, 150, 200);
@@ -332,22 +321,8 @@ public class MyPanel extends JPanel implements KeyListener{
 	    }
 	}
    
-	/*private void print() {
-		int x=0;
-	    int y=0;
-		while(x<COL) {
-			while(y<ROW) {
-				System.out.print(getMap(level)[x][y]);
-				y++;
-			}
-			System.out.println(" ");
-			y=0;
-			x++;
-		}
-	    
-	}*/
 	private void loadImage() {
-		ImageIcon icon = new ImageIcon(getClass().getResource("image/floor.jpg"));
+		ImageIcon icon = new ImageIcon(getClass().getResource("Final Image/Background/Way.jpg"));
 		floorImage = icon.getImage();
 		icon = new ImageIcon(getClass().getResource("image/wall.jpg"));
 		wallImage = icon.getImage();
@@ -643,7 +618,6 @@ public class MyPanel extends JPanel implements KeyListener{
 
 	
 	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
     static int num = map.length;
@@ -662,7 +636,6 @@ public class MyPanel extends JPanel implements KeyListener{
     	
     }
     public int getLevel(int level) {
-    	
 		return level;	
     }
    
