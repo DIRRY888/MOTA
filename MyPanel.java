@@ -723,12 +723,12 @@ public class MyPanel extends JPanel implements KeyListener {
 		int animalinjure = 0;
 		int animalhp = list.get(0).gethp();
 		if (x == 14) {
-			heroinjure = list.get(0).getattack() - hero.getdefence();
-			animalinjure = hero.getattack() - list.get(0).getdefence();
-			hero.hp = hero.gethp() - heroinjure;
+			heroinjure = list.get(0).getattack() - hero.getDefence();
+			animalinjure = hero.getAttack() - list.get(0).getdefence();
+			hero.Life = hero.getLife() - heroinjure;
 			animalhp = animalhp - animalinjure;
-			hero.money = hero.getmoney() + list.get(0).getmoney();
-			hero.experience = hero.getexperience() + list.get(0).getexperience();
+			hero.money = hero.getMoney() + list.get(0).getmoney();
+			hero.experience = hero.getExperience() + list.get(0).getexperience();
 			hero.printstate();
 		}
 
