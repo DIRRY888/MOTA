@@ -17,8 +17,8 @@ import javax.swing.JPanel;
 
 public class MyPanel extends JPanel implements KeyListener{
     private static final long serialVersionUID = 1L;
-    private static final int WIDTH = 480;
-    private static final int HEIGHT = 480;
+    static final int WIDTH = 480;
+    static final int HEIGHT = 480;
     private static final int ROW = 15;
     private static final int COL = 15;
     private static final int CS = 32;
@@ -146,6 +146,14 @@ public class MyPanel extends JPanel implements KeyListener{
     private java.awt.Image blackImage;
     private java.awt.Image downImage;
     private java.awt.Image animal1Image;
+    private java.awt.Image swordImage;
+    private java.awt.Image shieldImage;
+    private java.awt.Image chutouImage;
+    private java.awt.Image ykeyImage;
+    private java.awt.Image rkeyImage;
+    private java.awt.Image bkeyImage;
+    
+    
     
     private int x,y;
     private static final int LEFT = 0;
@@ -206,6 +214,7 @@ public class MyPanel extends JPanel implements KeyListener{
         }
     	if(fight==true&&getMap(level)[x][y]==14) {
             drawFight(g,14);
+            getMap(level)[x][y]=0;
            }
         if(pack == 2) {
          drawPackage(g);
@@ -214,7 +223,7 @@ public class MyPanel extends JPanel implements KeyListener{
     }
 	private void drawFight(Graphics g,int num) {
 		String string6 = new String("Fight");
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLUE);
 		g.fillRect(3*CS, 2*CS, 5*CS, 5*CS);
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
 		g.drawString(string6,4*CS, 2*CS);
@@ -226,11 +235,33 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 	private void drawPackage(Graphics g) {
 		String string6 = new String("Your Package");
-		g.setColor(Color.BLACK);
+		g.setColor(Color.BLUE);
+	
+		g.drawRoundRect(3*CS, 2*CS, 5*CS, 5*CS, 10,10);
+		g.drawRoundRect(3*CS-2, 2*CS-2, 5*CS+2, 5*CS+2, 15,15);
+		g.drawRoundRect(3*CS-3, 2*CS-3, 5*CS+4, 5*CS+4, 15,15);
+		g.drawRoundRect(3*CS-4, 2*CS-4, 5*CS+6, 5*CS+6, 15,15);	
+		g.setColor(Color.WHITE);
 		g.fillRect(3*CS, 2*CS, 5*CS, 5*CS);
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
 		g.drawString(string6,4*CS, 2*CS);
-		g.drawImage(yellowkeyImage,3*CS,3*CS,CS,CS,this);
+		g.drawImage(ykeyImage,3*CS,2*CS,CS,CS,this);
+		g.drawImage(bkeyImage,3*CS,3*CS,CS,CS,this);
+		g.drawImage(rkeyImage,3*CS,4*CS,CS,CS,this);
+		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
+		g.setColor(Color.BLACK);
+		String h  =  " "+hero.yellowkey;
+		g.drawString(h,4*CS,3*CS-10); 
+		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
+		g.setColor(Color.BLACK);
+		String o  =  " "+hero.bluekey;
+		System.out.println(h);
+		g.drawString(o,4*CS,4*CS-10); 
+		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
+		g.setColor(Color.BLACK);
+		String p  =  " "+hero.redkey;
+		System.out.println(h);
+		g.drawString(p,4*CS,5*CS-10); 
 		
 	}
 	private void drawFly(Graphics g) {
@@ -379,6 +410,18 @@ public class MyPanel extends JPanel implements KeyListener{
 	    downImage = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/animal1.jpg"));
 	    animal1Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/p.jpg"));
+	    swordImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/s.jpg"));
+	    shieldImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/q.jpg"));
+	    chutouImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/101-01.png"));
+	    ykeyImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/101-02.png"));
+	    bkeyImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/101-03.png"));
+	    rkeyImage = icon.getImage();
 	}
 	public void keyPressed(KeyEvent e) {
 	int keyCode = e.getKeyCode();
@@ -612,7 +655,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		
 		if(getMap(level)[x][y]==14) {		
 			fight(14);	
-			getMap(level)[x][y]=0;
+		
 		}
 		
 		return true;
@@ -634,6 +677,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		   hero.experience = hero.getexperience()+list.get(0).getexperience();
 		   hero.printstate();
 		}
+		
 	
 		
 	}
