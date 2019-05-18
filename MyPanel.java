@@ -176,7 +176,9 @@ public class MyPanel extends JPanel implements KeyListener {
 		private java.awt.Image experiencePanelImage;
 		private java.awt.Image inforPanelImage;
 		private java.awt.Image titlePanelImage;
+		private java.awt.Image gameOverImage;
 		private Icon mapPanelImage;
+		
 
 	private int x, y;
 	private static final int LEFT = 0;
@@ -224,7 +226,7 @@ public class MyPanel extends JPanel implements KeyListener {
 		drawMap(g);
 		drawRole(g);
 		drawInformationPanel(g);
-		
+		gameOver(g);
 		if (showfly == true && getMap(floor)[x][y] == 11) {
 			drawFly(g);
 			drawChoose(g);
@@ -331,6 +333,14 @@ public class MyPanel extends JPanel implements KeyListener {
 		g.drawString( String.valueOf(hero.attack), locationX + space, locationY + 30*9-5);
 		g.drawString( String.valueOf(hero.experience), locationX + space, locationY + 30*10-5);
 		
+	}
+	
+	private void gameOver(Graphics g) {
+		if(hero.Life <= 0) {
+			int c = 0;
+			while(c != 15)
+			g.drawImage(gameOverImage, c*CS, c*CS, CS, CS, this);
+		}
 	}
 	
 	private void drawFight(Graphics g, int num) {
@@ -617,6 +627,8 @@ public class MyPanel extends JPanel implements KeyListener {
 		titlePanelImage = icon.getImage();
 		icon = new ImageIcon(getClass().getResource("Final Image/image/mapguide.png"));
 		mapPanelImage = icon;
+		icon = new ImageIcon(getClass().getResource("Final Image/image/gameover.png"));
+		gameOverImage = icon.getImage();
 	}
 
 	public void keyPressed(KeyEvent e) {
