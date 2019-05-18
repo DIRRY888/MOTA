@@ -255,12 +255,12 @@ public class MyPanel extends JPanel implements KeyListener{
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
 		String o  =  " "+hero.bluekey;
-		System.out.println(h);
+		
 		g.drawString(o,4*CS,4*CS-10); 
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
 		String p  =  " "+hero.redkey;
-		System.out.println(h);
+	
 		g.drawString(p,4*CS,5*CS-10); 
 		
 	}
