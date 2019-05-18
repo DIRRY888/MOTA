@@ -2,16 +2,23 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MyPanel extends JPanel implements KeyListener {
 	private static final long serialVersionUID = 1L;
-	private static final int WIDTH = 480;
+	private static final int WIDTH = 720;
 	private static final int HEIGHT = 480;
 	// the number of row
 	private static final int ROW = 15;
@@ -157,6 +164,19 @@ public class MyPanel extends JPanel implements KeyListener {
 	private java.awt.Image swardImage;
 
 	private java.awt.Image heroImage;
+	
+	// images for information panel
+		private java.awt.Image redkeyPanelImage;
+		private java.awt.Image yellowkeyPanelImage;
+		private java.awt.Image bluekeyPanelImage;
+		private java.awt.Image coinsPanelImage;
+		private java.awt.Image lifePanelImage;
+		private java.awt.Image attackPanelImage;
+		private java.awt.Image defencePanelImage;
+		private java.awt.Image experiencePanelImage;
+		private java.awt.Image inforPanelImage;
+		private java.awt.Image titlePanelImage;
+		private Icon mapPanelImage;
 
 	private int x, y;
 	private static final int LEFT = 0;
@@ -192,8 +212,9 @@ public class MyPanel extends JPanel implements KeyListener {
 		count = 0;
 		setFocusable(true);
 		addKeyListener(this);
+		Hero hero = new Hero();
 		init();
-
+		initButton();
 		threadAnime = new Thread(new AnimationThread());
 		threadAnime.start();
 	}
@@ -202,7 +223,8 @@ public class MyPanel extends JPanel implements KeyListener {
 		super.paintComponent(g);
 		drawMap(g);
 		drawRole(g);
-
+		drawInformationPanel(g);
+		
 		if (showfly == true && getMap(floor)[x][y] == 11) {
 			drawFly(g);
 			drawChoose(g);
@@ -216,6 +238,101 @@ public class MyPanel extends JPanel implements KeyListener {
 
 	}
 
+	/* The following method 'initButton' is for the function: 
+	* check previous and next maps' information by click button in inforPanel
+	* (will be completed by NiSha
+	* Please DO NOT change anything inside it!!!)
+	*/
+	
+	/*
+	 * Reminder: always close the new frame before operate the HERO or open a new
+	 * window ('focus' problem & redundant windows)
+	 */
+	private void initButton() {
+		// Creat a Map Guide Button
+		JButton mapGuide = new JButton(mapPanelImage); // NEED - improve image's quality
+		// Set size & location & appearance
+		this.setLayout(null);
+		mapGuide.setBounds(500, 400, 40, 40);
+		mapGuide.setBorder(null);                      //NEED - cancel borders and set dynamic display
+		mapGuide.setMargin(new Insets(0, 0, 0, 0));
+		mapGuide.setContentAreaFilled(false);
+		this.add(mapGuide);
+
+		// add action
+		mapGuide.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent a) {
+				// create a new frame
+				JFrame mapGuideFrame = new JFrame("Map Guide");
+				// set this window
+				mapGuideFrame.setSize(300, 400);
+				mapGuideFrame.setVisible(true);
+				mapGuideFrame.setLocationRelativeTo(null);
+				mapGuideFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				JButton button2 = new JButton("µã»÷ÎÒ");
+				button2.setSize(50, 25);
+				button2.setBorderPainted(false);
+				button2.setLocation(50, 80);
+				button2.setVisible(true);
+				mapGuideFrame.add(button2);
+				focus();
+			}
+		});
+	}
+
+	/*
+	 * This method helps the focus change to the main panel after every
+	 * actionListener asked for focus
+	 */
+	public void focus() {
+		this.requestFocus();
+	}
+	
+	// information menu method
+	private void drawInformationPanel(Graphics g) {
+		int locationX = 550;
+		int locationY = 70;
+		int space = 46;
+		g.drawImage(inforPanelImage, HEIGHT, 0, HEIGHT/2, HEIGHT, this);
+		g.drawImage(titlePanelImage, HEIGHT+10, 12, 220, 55, this);
+		g.drawImage(titlePanelImage, HEIGHT+10, 60, 220, 118, this);
+		g.drawImage(titlePanelImage, HEIGHT+10, 175, 220, 55, this);
+		g.drawImage(titlePanelImage, HEIGHT+10, 235, 220, 148, this);
+		
+		g.drawImage(yellowkeyPanelImage, locationX, locationY, CS, CS, this);
+		g.drawImage(bluekeyPanelImage, locationX, locationY + 30, CS, CS, this);
+		g.drawImage(redkeyPanelImage, locationX, locationY + 30*2, CS, CS, this);
+		g.drawImage(lifePanelImage, locationX, locationY + 30*4, CS, CS, this);
+		g.drawImage(coinsPanelImage, locationX, locationY + 30*6, CS, CS, this);
+		g.drawImage(experiencePanelImage, locationX, locationY + 30*7, CS, CS, this);
+		g.drawImage(attackPanelImage, locationX, locationY + 30*8, CS, CS, this);
+		g.drawImage(defencePanelImage, locationX, locationY + 30*9, CS, CS, this);
+		
+		g.setFont(new Font("Tahoma", Font.BOLD, 24));
+		Color c = new Color(90, 46, 30);
+		g.setColor(c);
+		g.drawString( "  MAP LEVEL  " + String.valueOf(floor), 500, 50);
+		c = new Color(255, 215, 0);
+		g.setColor(c);
+		g.drawString( String.valueOf(hero.yellowkey), locationX + space, locationY + 25);
+		g.setColor(Color.BLUE);
+		g.drawString( String.valueOf(hero.bluekey), locationX + space, locationY + 30*2-2);
+		g.setColor(Color.RED);
+		g.drawString( String.valueOf(hero.redkey), locationX + space, locationY + 30*3 +3);
+		c = new Color(255, 20, 130);
+		g.setColor(c);
+		g.drawString( String.valueOf(hero.Life), locationX + space, locationY + 30*5-5);
+		c = new Color(253,135,0);
+		g.setColor(c);
+		g.drawString( String.valueOf(hero.money), locationX + space, locationY + 30*7-5);
+		g.drawString( String.valueOf(hero.experience), locationX + space, locationY + 30*8-5);
+		g.drawString( String.valueOf(hero.attack), locationX + space, locationY + 30*9-5);
+		g.drawString( String.valueOf(hero.experience), locationX + space, locationY + 30*10-5);
+		
+	}
+	
 	private void drawFight(Graphics g, int num) {
 		String string6 = new String("Fight");
 		g.setColor(Color.WHITE);
@@ -384,7 +501,8 @@ public class MyPanel extends JPanel implements KeyListener {
 			x++;
 		}
 	}
-
+	
+	
 	private void loadImage() {
 		ImageIcon icon = new ImageIcon(getClass().getResource("Final Image/Background/Way.jpg"));
 		wayImage = icon.getImage();
@@ -475,12 +593,51 @@ public class MyPanel extends JPanel implements KeyListener {
 
 		icon = new ImageIcon(getClass().getResource("Final Image/Main Character/Red1.png"));
 		heroImage = icon.getImage();
+		
+		// Images for information panel
+		icon = new ImageIcon(getClass().getResource("Final Image/image/bkeys.png"));
+		bluekeyPanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/ykeys.png"));
+		yellowkeyPanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/rkeys.png"));
+		redkeyPanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/coins.png"));
+		coinsPanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/inforPanel.jpg"));
+		inforPanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/life.png"));
+		lifePanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/attack.png"));
+		attackPanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/defence.png"));
+		defencePanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/experience.png"));
+		experiencePanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/title.png"));
+		titlePanelImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("Final Image/image/mapguide.png"));
+		mapPanelImage = icon;
 	}
 
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 
 		switch (keyCode) {
+		/*
+		 * GodMode is for an easy testing through the whole game This is related to the
+		 * testing implement in our report do not change it without asking please.
+		 */
+		case KeyEvent.VK_G:
+			System.out.println("God mode");
+			hero.Life = 9999;
+			hero.attack = 999;
+			hero.defence = 999;
+			hero.money = 999;
+			hero.experience = 999;
+			hero.yellowkey = 999;
+			hero.bluekey = 999;
+			hero.redkey = 999;
+			break;
 		case KeyEvent.VK_LEFT:
 			move(LEFT);
 			break;
