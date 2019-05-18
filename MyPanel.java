@@ -53,9 +53,9 @@ public class MyPanel extends JPanel implements KeyListener{
         		{1,1,8,1,1,1,1,0,1,1,1,1,8,1,1},
         		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         		{1,1,1,1,0,1,1,10,1,1,0,1,1,1,1},
-        		{1,0,0,1,0,1,0,0,0,1,0,1,0,0,1},
+        		{1,0,15,1,0,1,0,0,0,1,0,1,15,0,1},
         		{1,0,0,9,0,1,0,0,0,1,0,9,0,0,1},
-        		{1,7,0,1,0,1,0,0,0,1,0,1,0,11,1},
+        		{1,7,0,1,0,1,0,16,0,1,0,1,0,11,1},
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         	},
         	{
@@ -164,6 +164,7 @@ public class MyPanel extends JPanel implements KeyListener{
     private static final int DOWN = 3;
 	
     private static int choose = 1;
+    private static int choose2 = 1;
     public static int count ;
     private Thread threadAnime;
     private int direction;
@@ -173,6 +174,7 @@ public class MyPanel extends JPanel implements KeyListener{
     private boolean showfly=false;
     private boolean canmove = true;
     private boolean fight = true;
+    private boolean usingpackage = false;
     private int pack = 1;
     Hero hero = new Hero();
     ArrayList<Animal> list = new ArrayList<Animal>();
@@ -218,11 +220,26 @@ public class MyPanel extends JPanel implements KeyListener{
             drawFight(g,14);
             getMap(level)[x][y]=0;
            }
-        if(pack == 2) {
+        if(pack == 2 && usingpackage==true) {
          drawPackage(g);
+         if(usingpackage==true){
+         drawChoosebottle(g,choose2);
+         }
        	}
     	
     }
+	private void drawChoosebottle(Graphics g,int chooses2) {
+		if(choose2 ==1) {
+		g.setColor(Color.RED);
+		g.fillRect(5*CS+20+30,2*CS-30+choose2*45,10,5);
+		}
+		if(choose2 ==2) {
+			g.setColor(Color.RED);
+			g.fillRect(5*CS+20+30,2*CS-45+choose2*45,10,5);
+			}
+		
+	}
+
 	private void drawFight(Graphics g,int num) {
 		String string6 = new String("Fight");
 		g.setColor(Color.WHITE);
@@ -236,7 +253,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		
 	}
 	private void drawPackage(Graphics g) {
-		g.setColor(Color.RED);
+		
 		String string6 = new String("Your Package");
 		g.setColor(Color.BLUE);
 	
@@ -271,13 +288,14 @@ public class MyPanel extends JPanel implements KeyListener{
 		
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
-		String h1  =  " "+hero.bluebottle;
-		g.drawString(h,5*CS+20,3*CS-10); 
+		String h1  =  " "+hero.redbottle;
+		g.drawString(h1,5*CS+20,3*CS-10); 
 		
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
-		String h2  =  " "+hero.redbottle;
-		g.drawString(h,5*CS+20,4*CS-10); 
+		String h2  =  " "+hero.bluebottle;
+		g.drawString(h2,5*CS+20,4*CS-10); 
+	
 	}
 	private void drawFly(Graphics g) {
 		canmove = false;
@@ -297,9 +315,9 @@ public class MyPanel extends JPanel implements KeyListener{
 		g.drawRoundRect(58, 43, 154, 204, 10, 10);
 		g.drawRoundRect(57, 42, 156, 206, 10, 10);	
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));	
-		string4 = "level 0";
-		string5 = "level 1";
-		string6 = "level 2";
+		string4 = " exit";
+		string5 = "level 0";
+		string6 = "level 1";
 		g.setColor(Color.GREEN);
 
 		g.setColor(Color.WHITE);
@@ -370,6 +388,12 @@ public class MyPanel extends JPanel implements KeyListener{
 	    		}
 	    		if(getMap(level)[x][y]==14) {
 	    			g.drawImage(animal1Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==15) {
+	    			g.drawImage(rbottleImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==16) {
+	    			g.drawImage(bbottleImage,x*CS,y*CS,CS,CS,this);
 	    		}
 	    		y++;
 	        }
@@ -471,9 +495,19 @@ public class MyPanel extends JPanel implements KeyListener{
 				 choose(3);
 				 }
 		     
-		}		
+		}
+		if(pack ==2 && usingpackage==true) {
+			if(choose2 ==1) {
+			     usebottle(1);
+			 }
+			if(choose2 == 2) {
+				 usebottle(2);
+		    }
+		     
+		}
 		break;
 	case KeyEvent.VK_3:
+		
 		openPackage(pack);		
 		break;
 		
@@ -552,6 +586,30 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 		
 	}
+	private void usebottle(int i) {
+		if(i==1) {
+			if(hero.redbottle==0) {
+			    System.out.println("no redbotttle");
+			    hero.printstate();
+			}else {
+			hero.hp = hero.hp+300;
+			hero.redbottle = hero.redbottle-1;
+			hero.printstate();
+			}
+		}
+		if(i==2) {
+			if(hero.bluebottle==0) {
+			    System.out.println("no bluebotttle");
+			    hero.printstate();
+			}else {
+			hero.hp = hero.hp+500;
+			hero.bluebottle = hero.bluebottle-1;
+			hero.printstate();
+			}
+		}
+		
+	}
+
 	private void move(int event) {
 		switch(event) {
 		case LEFT:
@@ -582,6 +640,12 @@ public class MyPanel extends JPanel implements KeyListener{
 			}
 			if(showfly) {
 				choose = choose+1;
+			}
+			if(usingpackage) {
+				choose2 = choose2+1;
+				if(choose2 == 3 ) {
+					choose2 = 1;
+				}
 			}
 			break;
 			
@@ -614,9 +678,13 @@ public class MyPanel extends JPanel implements KeyListener{
 		switch(e) {
 		case 1:
 			pack = 2;
+			usingpackage = true;
+			canmove = false;
 			break;
 		case 2:
 			pack = 1;
+			usingpackage = false;
+			canmove = true;
 			break;	
 		
 	default :
@@ -679,6 +747,14 @@ public class MyPanel extends JPanel implements KeyListener{
 		if(getMap(level)[x][y]==14) {		
 			fight(14);	
 		
+		}
+		if(getMap(level)[x][y]==15) {		
+			hero.changebottle(15);	
+			getMap(level)[x][y]=0;
+		}
+		if(getMap(level)[x][y]==16) {		
+			hero.changebottle(16);	
+			getMap(level)[x][y]=0;
 		}
 		
 		return true;

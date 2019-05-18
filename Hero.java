@@ -64,5 +64,14 @@ public class Hero {
     	}
     	
     }
+	public void changebottle(int i) {
+		if(i==15) {
+    		redbottle = redbottle+1;
+    	}
+		if(i==16) {
+    		bluebottle = bluebottle+1;
+    	}
+		
+	}
    
 }
