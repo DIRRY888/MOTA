@@ -241,6 +241,30 @@ public class MyPanel extends JPanel implements KeyListener{
             drawFight(g,14);
             getMap(level)[x][y]=0;
            }
+    	if(fight==true&&getMap(level)[x][y]==17) {
+            drawFight(g,17);
+            getMap(level)[x][y]=0;
+           }
+    	if(fight==true&&getMap(level)[x][y]==18) {
+            drawFight(g,18);
+            getMap(level)[x][y]=0;
+    	   } 
+    	if(fight==true&&getMap(level)[x][y]==19) {
+            drawFight(g,19);
+            getMap(level)[x][y]=0;
+           }
+    	if(fight==true&&getMap(level)[x][y]==20) {
+            drawFight(g,20);
+            getMap(level)[x][y]=0;
+           }
+    	if(fight==true&&getMap(level)[x][y]==21) {
+            drawFight(g,21);
+            getMap(level)[x][y]=0;
+           }
+    	if(fight==true&&getMap(level)[x][y]==22) {
+            drawFight(g,22);
+            getMap(level)[x][y]=0;
+           }
         if(pack == 2 && usingpackage==true) {
          drawPackage(g);
          if(usingpackage==true){
@@ -299,14 +323,38 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 
 	private void drawFight(Graphics g,int num) {
-		String string6 = new String("Fight");
+		String string6 = new String("V--S");
 		g.setColor(Color.WHITE);
 		g.fillRect(3*CS, 2*CS, 5*CS, 5*CS);
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
-		g.drawString(string6,4*CS, 2*CS);
+		g.setColor(Color.BLACK);
+		g.drawString(string6,5*CS, 4*CS-10);
 		g.drawImage(heroImage,3*CS,3*CS,CS,CS,this);
+		g.setColor(Color.BLACK);
+		g.drawRoundRect(3*CS, 2*CS, 5*CS, 5*CS, 10,10);
+		g.drawRoundRect(3*CS-2, 2*CS-2, 5*CS+2, 5*CS+2, 15,15);
+		g.drawRoundRect(3*CS-3, 2*CS-3, 5*CS+4, 5*CS+4, 15,15);
+		g.drawRoundRect(3*CS-4, 2*CS-4, 5*CS+6, 5*CS+6, 15,15);	
 		if(num == 14 ) {
 			g.drawImage(M1Image,7*CS,3*CS,CS,CS,this);
+		}
+		if(num == 17 ) {
+			g.drawImage(M2Image,7*CS,3*CS,CS,CS,this);
+		}
+		if(num == 18 ) {
+			g.drawImage(M3Image,7*CS,3*CS,CS,CS,this);
+		}
+		if(num == 19 ) {
+			g.drawImage(M4Image,7*CS,3*CS,CS,CS,this);
+		}
+		if(num == 20 ) {
+			g.drawImage(M5Image,7*CS,3*CS,CS,CS,this);
+		}
+		if(num == 21 ) {
+			g.drawImage(M6Image,7*CS,3*CS,CS,CS,this);
+		}
+		if(num == 22 ) {
+			g.drawImage(M7Image,7*CS,3*CS,CS,CS,this);
 		}
 		
 	}
@@ -964,6 +1012,31 @@ public class MyPanel extends JPanel implements KeyListener{
 		if(getMap(level)[x][y]==14) {		
 			fight(14);	
 		
+		
+		}
+		if(getMap(level)[x][y]==17) {		
+			fight(17);	
+					
+		}
+		if(getMap(level)[x][y]==18) {		
+			fight(18);	
+		
+		}
+		if(getMap(level)[x][y]==19) {		
+			fight(19);	
+		
+		}
+		if(getMap(level)[x][y]==20) {		
+			fight(20);	
+		
+		}
+		if(getMap(level)[x][y]==21) {		
+			fight(21);	
+			
+		}
+		if(getMap(level)[x][y]==22) {		
+			fight(22);	
+			
 		}
 		if(getMap(level)[x][y]==15) {		
 			hero.changebottle(15);	
@@ -991,10 +1064,12 @@ public class MyPanel extends JPanel implements KeyListener{
 	private void fight(int x) {
 		JOptionPane.showMessageDialog(this,"Fight begin ");	
 		fight = true;
-		int heroinjure = 0;
-		int animalinjure = 0;
-		int animalhp = list.get(0).gethp();
+		
+		
 		if(x==14) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+		    int animalhp = list.get(0).gethp();
 		   heroinjure =  list.get(0).getattack()-hero.getdefence();
 		   animalinjure =  hero.getattack()-list.get(0).getdefence();
 		   hero.hp = hero.gethp()-heroinjure;
@@ -1003,8 +1078,80 @@ public class MyPanel extends JPanel implements KeyListener{
 		   hero.experience = hero.getexperience()+list.get(0).getexperience();
 		   hero.printstate();
 		}
+		if(x==17) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(1).gethp();
+			   heroinjure =  list.get(1).getattack()-hero.getdefence();
+			   animalinjure =  hero.getattack()-list.get(1).getdefence();
+			   hero.hp = hero.gethp()-heroinjure;
+			   animalhp = animalhp-animalinjure;
+			   hero.money = hero.getmoney()+list.get(1).getmoney();
+			   hero.experience = hero.getexperience()+list.get(1).getexperience();
+			   hero.printstate();
+			}
+		if(x==18) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(2).gethp();
+			   heroinjure =  list.get(2).getattack()-hero.getdefence();
+			   animalinjure =  hero.getattack()-list.get(2).getdefence();
+			   hero.hp = hero.gethp()-heroinjure;
+			   animalhp = animalhp-animalinjure;
+			   hero.money = hero.getmoney()+list.get(1).getmoney();
+			   hero.experience = hero.getexperience()+list.get(2).getexperience();
+			   hero.printstate();
+			}
+		if(x==19) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(3).gethp();
+			   heroinjure =  list.get(3).getattack()-hero.getdefence();
+			   animalinjure =  hero.getattack()-list.get(3).getdefence();
+			   hero.hp = hero.gethp()-heroinjure;
+			   animalhp = animalhp-animalinjure;
+			   hero.money = hero.getmoney()+list.get(3).getmoney();
+			   hero.experience = hero.getexperience()+list.get(3).getexperience();
+			   hero.printstate();
+			}
+		if(x==20) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(4).gethp();
+			   heroinjure =  list.get(4).getattack()-hero.getdefence();
+			   animalinjure =  hero.getattack()-list.get(4).getdefence();
+			   hero.hp = hero.gethp()-heroinjure;
+			   animalhp = animalhp-animalinjure;
+			   hero.money = hero.getmoney()+list.get(4).getmoney();
+			   hero.experience = hero.getexperience()+list.get(4).getexperience();
+			   hero.printstate();
+			}
+		if(x==21) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(5).gethp();
+			   heroinjure =  list.get(5).getattack()-hero.getdefence();
+			   animalinjure =  hero.getattack()-list.get(5).getdefence();
+			   hero.hp = hero.gethp()-heroinjure;
+			   animalhp = animalhp-animalinjure;
+			   hero.money = hero.getmoney()+list.get(5).getmoney();
+			   hero.experience = hero.getexperience()+list.get(5).getexperience();
+			   hero.printstate();
+			}
+		if(x==22) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(6).gethp();
+			   heroinjure =  list.get(6).getattack()-hero.getdefence();
+			   animalinjure =  hero.getattack()-list.get(6).getdefence();
+			   hero.hp = hero.gethp()-heroinjure;
+			   animalhp = animalhp-animalinjure;
+			   hero.money = hero.getmoney()+list.get(6).getmoney();
+			   hero.experience = hero.getexperience()+list.get(6).getexperience();
+			   hero.printstate();
+			}
 		
-	
+	     
 		
 	}
 	public void keyReleased(KeyEvent e) {
@@ -1044,12 +1191,21 @@ public class MyPanel extends JPanel implements KeyListener{
     }
     public void init(){
     	//Hero hero = new Hero();
-    	Animal animal1 = new Animal("black guard", 1,300,40,20,50,50);
-    	Animal animal2 = new Animal("black guard", 2,400,60,50,70,80);
-    	
+    	Animal animal1 = new Animal("V1", 1,300,40,20,50,50);
+    	Animal animal2 = new Animal("V2", 2,400,60,50,70,80);
+    	Animal animal3 = new Animal("V3", 2,400,80,58,80,90);
+    	Animal animal4 = new Animal("V4", 3,500,100,90,180,140);
+    	Animal animal5 = new Animal("V5", 3,600,160,168,210,200);
+    	Animal animal6 = new Animal("V6", 4,680,200,180,250,300);
+    	Animal animal7 = new Animal("V7", 5,900,230,200,300,400);
     	//ArrayList<Animal> list = new ArrayList<Animal>();
     	list.add(animal1);
     	list.add(animal2);
+    	list.add(animal3);
+    	list.add(animal4);
+    	list.add(animal5);
+    	list.add(animal6);
+    	list.add(animal7);
     	
     	
     }

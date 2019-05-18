@@ -13,7 +13,7 @@ public class Hero {
 	int redbottle;
     Hero(){
     	level = 1;
-    	hp=1000;
+    	hp=4000;
     	attack =50;
     	defence = 30;
     	money = 0;
