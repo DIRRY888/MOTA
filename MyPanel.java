@@ -219,7 +219,7 @@ public class MyPanel extends JPanel implements KeyListener{
     	threadAnime = new Thread(new AnimationThread());
     	threadAnime.start();
     	//print();
-    	
+    	sounds();
     	
     	
     }
@@ -1209,8 +1209,13 @@ public class MyPanel extends JPanel implements KeyListener{
     	
     	
     }
-	
- 
+    public SoundPlayer sound = new SoundPlayer();
+	public void sounds() {
+		
+		sound.loadSound("mota/start.wav");
+	    sound.playSound();
+	} 
+   
     
        
     

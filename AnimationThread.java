@@ -1,6 +1,6 @@
 
 public class AnimationThread extends Thread implements Runnable {
-
+    public SoundPlayer sound = new SoundPlayer();
     private Thread threadAnime;
 	
 	public void run() {
@@ -15,7 +15,7 @@ public class AnimationThread extends Thread implements Runnable {
 				MyPanel.count = 0;
 			}
 			
-			
+	
 			repaint();
 			try {
 				Thread.sleep(300);
