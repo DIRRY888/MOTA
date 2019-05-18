@@ -45,85 +45,85 @@ public class MyPanel extends JPanel implements KeyListener{
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         		{1,0,0,0,1,1,1,1,1,1,1,0,0,0,1},
         		{1,3,4,2,1,1,1,1,1,1,1,2,4,3,1},
-        		{1,3,4,0,1,0,3,14,0,0,1,0,4,3,1},
-        		{1,3,0,0,1,0,1,1,1,0,1,0,0,3,1},
-        		{1,0,0,0,8,14,1,13,1,0,1,0,0,0,1},
-        		{1,0,0,0,1,0,1,0,1,0,1,0,0,0,1},
-        		{1,0,0,0,1,0,0,0,0,0,1,0,0,0,1},
+        		{1,3,4,0,1,0,3,17,0,0,1,0,4,3,1},
+        		{1,3,0,0,1,14,1,1,1,14,1,0,0,3,1},
+        		{1,17,18,17,8,17,1,13,1,17,1,17,18,17,1},
+        		{1,14,17,14,1,14,1,0,1,14,1,14,17,14,1},
+        		{1,0,14,0,1,0,0,0,0,0,1,0,14,0,1},
         		{1,1,8,1,1,1,1,0,1,1,1,1,8,1,1},
         		{1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         		{1,1,1,1,0,1,1,10,1,1,0,1,1,1,1},
-        		{1,0,15,1,0,1,0,0,0,1,0,1,15,0,1},
-        		{1,0,0,9,0,1,0,0,0,1,0,9,0,0,1},
-        		{1,7,0,1,0,1,0,16,0,1,0,1,0,11,1},
+        		{1,0,15,1,0,1,0,17,0,1,0,1,15,14,1},
+        		{1,14,0,9,0,1,0,0,0,1,0,9,14,18,1},
+        		{1,7,14,1,0,1,0,16,0,1,0,1,18,11,1},
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         	},
         	{
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,0,0,0,0,0,0,10,0,0,0,0,0,0,1},
-        		{1,0,1,1,1,1,1,1,1,1,1,1,1,0,1},
-        		{1,0,1,0,0,0,0,0,0,0,0,0,1,0,1},
-        		{1,0,1,0,1,1,1,1,1,1,1,0,1,0,1},
-        		{1,0,1,0,1,0,0,8,0,0,1,0,1,0,1},
-        		{1,0,1,0,1,0,1,1,1,0,1,0,1,0,1},
-        		{1,0,1,8,1,0,1,13,1,0,1,8,1,0,1},
-        		{1,0,1,0,1,0,1,0,1,0,1,0,1,0,1},
-        		{1,0,1,0,1,0,0,0,1,0,1,0,1,0,1},
-        		{1,0,1,0,1,1,1,1,1,0,1,0,1,0,1},
-        		{1,0,1,0,0,0,0,0,0,0,1,0,1,0,1},
-        		{1,0,1,1,1,1,1,1,1,1,1,0,1,0,1},
+        		{1,0,0,0,0,0,0,10,0,0,14,17,18,19,1},
+        		{1,0,1,1,1,1,1,1,1,1,1,1,1,18,1},
+        		{1,17,1,0,17,18,17,0,3,4,2,0,1,17,1},
+        		{1,18,1,0,1,1,1,1,1,1,1,0,1,14,1},
+        		{1,19,1,0,1,0,0,8,0,0,1,0,1,0,1},
+        		{1,18,1,0,1,14,1,1,1,0,1,0,1,0,1},
+        		{1,17,1,8,1,17,1,13,1,14,1,8,1,0,1},
+        		{1,0,1,0,1,14,1,0,1,17,1,0,1,15,1},
+        		{1,0,1,0,1,0,0,0,1,14,1,0,1,16,1},
+        		{1,15,1,0,1,1,1,1,1,0,1,0,1,15,1},
+        		{1,16,1,0,17,18,17,0,0,0,1,17,1,0,1},
+        		{1,15,1,1,1,1,1,1,1,1,1,18,1,0,1},
         		{1,0,0,0,0,0,0,10,0,0,0,0,1,9,1},
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,7,1},
         	},
         	{
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,0,2,0,1,0,0,0,0,0,0,1,1,13,1},
-        		{1,0,2,0,1,0,1,1,1,1,0,1,0,0,1},
-        		{1,0,2,0,8,0,0,0,0,1,0,1,0,1,1},
-        		{1,0,2,0,1,0,1,1,0,1,0,1,0,1,1},
-        		{1,1,1,1,1,0,1,1,0,1,0,1,0,1,1},
-        		{1,0,4,0,1,0,1,1,0,1,0,0,0,1,1},
-        		{1,0,4,0,8,0,1,1,0,1,1,1,1,1,1},
-        		{1,0,4,0,1,0,1,1,0,0,0,0,0,0,1},
-        		{1,0,4,0,1,0,1,1,1,1,1,1,1,0,1},
-        		{1,1,1,1,1,0,1,1,0,0,0,8,0,0,1},
-        		{1,0,0,0,1,0,1,1,0,1,1,1,1,1,1},
-        		{1,0,0,0,10,0,1,1,0,0,0,0,14,14,1},
-        		{1,0,0,0,1,0,1,1,7,1,1,1,1,1,1},
+        		{1,23,3,14,1,0,0,17,17,0,0,1,1,13,1},
+        		{1,14,3,18,1,0,1,1,1,1,0,1,0,0,1},
+        		{1,14,3,17,8,0,14,14,0,1,0,1,0,1,1},
+        		{1,24,3,18,1,14,1,1,0,1,0,1,0,1,1},
+        		{1,1,1,1,1,17,1,1,0,1,0,1,0,1,1},
+        		{1,24,4,18,1,14,1,1,0,1,14,17,14,1,1},
+        		{1,14,4,17,8,0,1,1,0,1,1,1,1,1,1},
+        		{1,14,4,18,1,0,1,1,0,0,14,17,14,0,1},
+        		{1,23,4,14,1,0,1,1,1,1,1,1,1,0,1},
+        		{1,1,1,1,1,0,1,1,17,0,0,8,0,0,1},
+        		{1,28,0,0,1,17,1,1,18,1,1,1,1,1,1},
+        		{1,29,0,0,10,18,1,1,17,0,0,0,14,14,1},
+        		{1,30,0,0,1,17,1,1,7,1,1,1,1,1,1},
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         	},
         	{
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,3,3,3,3,1,14,0,0,1,0,0,0,0,1},
-        		{1,14,14,14,14,1,0,0,0,8,0,0,0,0,1},
-        		{1,0,0,0,0,1,0,0,0,1,0,0,0,0,1},
-        		{1,0,0,0,0,1,0,0,0,1,0,0,0,0,1},
+        		{1,3,3,3,3,1,17,18,18,1,0,15,16,25,1},
+        		{1,17,17,17,17,1,14,17,18,8,19,15,16,0,1},
+        		{1,0,18,18,18,1,0,14,17,1,0,15,16,0,1},
+        		{1,0,0,19,0,1,0,0,14,1,0,15,16,0,1},
         		{1,1,1,10,1,1,1,9,1,1,1,1,1,1,1},
-        		{1,0,0,0,14,0,0,0,0,0,0,0,0,13,1},
+        		{1,0,17,17,17,0,0,0,17,18,17,0,0,13,1},
         		{1,0,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,0,0,0,0,0,0,0,0,0,0,0,0,7,1},
+        		{1,0,17,17,17,0,0,0,17,18,17,0,0,7,1},
         		{1,1,1,10,1,1,1,9,1,1,1,1,1,1,1},
-        		{1,0,0,0,0,1,0,0,0,1,0,0,0,0,1},
-        		{1,0,0,0,0,1,0,0,0,1,0,0,0,0,1},
-        		{1,0,0,0,0,1,0,0,0,8,0,0,0,0,1},
-        		{1,3,2,4,3,1,0,0,0,1,0,0,0,0,1},
+        		{1,0,0,19,0,1,0,0,14,1,0,15,16,0,1},
+        		{1,0,18,18,18,1,0,14,17,1,0,15,16,0,1},
+        		{1,17,17,17,17,1,14,17,18,8,19,15,16,0,1},
+        		{1,3,3,3,3,1,17,18,18,1,0,15,16,26,1},
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         	},
         	{
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,12,12,12,12,12,12,12,12,12,12,12,12,12,1},
-        		{1,12,12,12,12,12,12,12,12,12,12,12,12,12,1},
-        		{1,12,12,12,12,12,12,12,12,12,12,12,12,12,1},
-        		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
-        		{1,0,0,1,0,0,0,13,0,0,0,0,0,0,1},
-        		{1,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
-        		{1,0,0,1,0,0,0,0,0,0,0,0,0,0,1},
-        		{1,0,0,1,0,0,0,10,0,0,0,0,0,0,1},
-        		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-        		{1,12,12,12,12,12,12,12,12,12,12,12,12,12,1},
-        		{1,12,12,12,12,12,12,12,12,12,12,12,12,12,1},
-        		{1,12,12,12,12,12,12,12,12,12,12,12,12,12,1},
+        		{1,0,0,0,1,1,1,1,1,1,1,1,1,1,1},
+        		{1,25,0,0,8,19,0,0,18,18,18,0,0,0,1},
+        		{1,0,0,0,1,27,27,27,27,7,27,27,27,18,1},
+        		{1,1,1,1,1,27,27,27,27,27,27,27,27,17,1},
+        		{1,27,27,27,27,27,27,27,27,27,27,27,27,18,1},
+        		{1,27,27,27,27,4,27,15,27,23,27,0,27,0,1},
+        		{1,13,0,0,18,0,18,0,18,0,18,0,0,0,1},
+        		{1,27,27,27,3,27,2,27,16,27,24,27,27,0,1},
+        		{1,27,27,27,27,27,27,27,27,27,27,27,27,18,1},
+        		{1,1,1,1,1,27,27,27,27,27,27,27,27,17,1},
+        		{1,0,0,0,1,27,27,27,27,7,27,27,27,18,1},
+        		{1,26,0,0,8,19,0,0,18,18,18,0,0,0,1},
+        		{1,0,0,0,1,1,1,1,1,1,1,1,1,1,1},
         		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         		
         	}
@@ -145,7 +145,7 @@ public class MyPanel extends JPanel implements KeyListener{
     private java.awt.Image flyImage;
     private java.awt.Image blackImage;
     private java.awt.Image downImage;
-    private java.awt.Image animal1Image;
+   
     private java.awt.Image swordImage;
     private java.awt.Image shieldImage;
     private java.awt.Image chutouImage;
@@ -156,7 +156,22 @@ public class MyPanel extends JPanel implements KeyListener{
     private java.awt.Image rbottleImage;
     private java.awt.Image bbottle2Image;
     private java.awt.Image rbottle2Image;
+
+    private java.awt.Image M1Image;
+    private java.awt.Image M2Image;
+    private java.awt.Image M3Image;
+    private java.awt.Image M4Image;
+    private java.awt.Image M5Image;
+    private java.awt.Image M6Image;
+    private java.awt.Image M7Image;
     
+    private java.awt.Image greengemImage;
+    private java.awt.Image yellowgemImage;
+    
+    private java.awt.Image forestImage;
+    private java.awt.Image leftImage;
+    private java.awt.Image middleImage;
+    private java.awt.Image rightImage;
     private int x,y;
     private static final int LEFT = 0;
     private static final int RIGHT = 1;
@@ -165,6 +180,7 @@ public class MyPanel extends JPanel implements KeyListener{
 	
     private static int choose = 1;
     private static int choose2 = 1;
+    private static int choose3 = 1;
     public static int count ;
     private Thread threadAnime;
     private int direction;
@@ -175,6 +191,7 @@ public class MyPanel extends JPanel implements KeyListener{
     private boolean canmove = true;
     private boolean fight = true;
     private boolean usingpackage = false;
+    private boolean shopping = false;
     private int pack = 1;
     Hero hero = new Hero();
     ArrayList<Animal> list = new ArrayList<Animal>();
@@ -216,6 +233,10 @@ public class MyPanel extends JPanel implements KeyListener{
          drawFly(g);
          drawChoose(g);
         }
+    	if(shopping==true&&getMap(level)[x][y]==29) {
+            drawShop(g);
+            drawChooseshop(g,choose3);
+           }
     	if(fight==true&&getMap(level)[x][y]==14) {
             drawFight(g,14);
             getMap(level)[x][y]=0;
@@ -228,6 +249,43 @@ public class MyPanel extends JPanel implements KeyListener{
        	}
     	
     }
+	private void drawChooseshop(Graphics g, int choose3) {
+		g.setColor(Color.WHITE);
+		g.fillRect(70,choose3*40+58,10,5);
+		
+	}
+
+	private void drawShop(Graphics g) {
+		canmove = false;
+		String string4 = new String("");
+		String string5 = new String("");
+		String string6 = new String("");
+		
+		g.setColor(Color.BLACK);
+		g.fillRect(60, 45, 250, 200);
+		g.setColor(Color.RED);
+		
+		g.drawRoundRect(60, 45, 250, 200, 10, 10);
+		g.drawRoundRect(59, 44, 252, 202, 10, 10);
+		g.drawRoundRect(58, 43, 254, 204, 10, 10);
+		g.drawRoundRect(57, 42, 256, 206, 10, 10);	
+		g.setFont(new Font("TimesRoman", Font.BOLD, 15));	
+		string4 = "Using 100 upgrade level";
+		string5 = "Using 80 increase attack";
+		string6 = "Using 80 increase defence";
+		g.setColor(Color.GREEN);
+
+		g.setColor(Color.WHITE);
+		
+		g.drawString(string4, 90, 105);
+		g.drawString(string5, 90, 145);
+		g.drawString(string6, 90, 185);
+		if(choose3 == 4) {
+			choose3 = 1;
+		}
+		
+	}
+
 	private void drawChoosebottle(Graphics g,int chooses2) {
 		if(choose2 ==1) {
 		g.setColor(Color.RED);
@@ -248,7 +306,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		g.drawString(string6,4*CS, 2*CS);
 		g.drawImage(heroImage,3*CS,3*CS,CS,CS,this);
 		if(num == 14 ) {
-			g.drawImage(animal1Image,7*CS,3*CS,CS,CS,this);
+			g.drawImage(M1Image,7*CS,3*CS,CS,CS,this);
 		}
 		
 	}
@@ -315,24 +373,30 @@ public class MyPanel extends JPanel implements KeyListener{
 		g.drawRoundRect(58, 43, 154, 204, 10, 10);
 		g.drawRoundRect(57, 42, 156, 206, 10, 10);	
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));	
-		string4 = " exit";
-		string5 = "level 0";
-		string6 = "level 1";
+		string1 = " exit";
+		string2 = "level 0";
+		string3 = "level 1";
+		string4 = "level 2";
+		string5 = "level 3";
+		
 		g.setColor(Color.GREEN);
 
 		g.setColor(Color.WHITE);
 		
-		g.drawString(string4, 90, 165);
-		g.drawString(string5, 90, 205);
-		g.drawString(string6, 90, 245);
-		if(choose == 4) {
+		g.drawString(string1, 90, 65);
+		g.drawString(string2, 90, 105);
+		g.drawString(string3, 90, 145);
+		g.drawString(string4, 90, 185);
+		g.drawString(string5, 90, 225);
+		g.drawString(string6, 90, 265);
+		if(choose == 6) {
 			choose = 1;
 		}
 		
 	}
 	private void drawChoose(Graphics g) {
 	g.setColor(Color.WHITE);
-	g.fillRect(70,110+choose*45,10,5);
+	g.fillRect(70,choose*40+15,10,5);
 	}
 	private void drawRole(Graphics g) {
 		g.drawImage(heroImage,x*CS,y*CS,x*CS+CS,y*CS+CS,count*CS,0,CS+count*CS,CS,this);
@@ -387,13 +451,55 @@ public class MyPanel extends JPanel implements KeyListener{
 	    			g.drawImage(downImage,x*CS,y*CS,CS,CS,this);
 	    		}
 	    		if(getMap(level)[x][y]==14) {
-	    			g.drawImage(animal1Image,x*CS,y*CS,CS,CS,this);
+	    			g.drawImage(M1Image,x*CS,y*CS,CS,CS,this);
 	    		}
 	    		if(getMap(level)[x][y]==15) {
 	    			g.drawImage(rbottleImage,x*CS,y*CS,CS,CS,this);
 	    		}
 	    		if(getMap(level)[x][y]==16) {
 	    			g.drawImage(bbottleImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==17) {
+	    			g.drawImage(M2Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==18) {
+	    			g.drawImage(M3Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==19) {
+	    			g.drawImage(M4Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==20) {
+	    			g.drawImage(M5Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==21) {
+	    			g.drawImage(M6Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==22) {
+	    			g.drawImage(M7Image,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==23) {
+	    			g.drawImage(greengemImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==24) {
+	    			g.drawImage(yellowgemImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==25) {
+	    			g.drawImage(swordImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==26) {
+	    			g.drawImage(shieldImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==27) {
+	    			g.drawImage(forestImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==28) {
+	    			g.drawImage(leftImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==29) {
+	    			g.drawImage(middleImage,x*CS,y*CS,CS,CS,this);
+	    		}
+	    		if(getMap(level)[x][y]==30) {
+	    			g.drawImage(rightImage,x*CS,y*CS,CS,CS,this);
 	    		}
 	    		y++;
 	        }
@@ -447,8 +553,6 @@ public class MyPanel extends JPanel implements KeyListener{
 	    blackImage = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/down.jpg"));
 	    downImage = icon.getImage();
-	    icon = new ImageIcon(getClass().getResource("image/animal1.jpg"));
-	    animal1Image = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/p.jpg"));
 	    swordImage = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/s.jpg"));
@@ -469,6 +573,33 @@ public class MyPanel extends JPanel implements KeyListener{
 	    bbottle2Image = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/103-11.png"));
 	    rbottle2Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_1.png"));
+	    M1Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_2.png"));
+	    M2Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_3.png"));
+	    M3Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_4.png"));
+	    M4Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_5.png"));
+	    M5Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_6.png"));
+	    M6Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/M_7.png"));
+	    M7Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/103-03.png"));
+	    greengemImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/103-04.png"));
+	    yellowgemImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/Foerst.png"));
+	    forestImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/left.jpg"));
+	    leftImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/midle.jpg"));
+	    middleImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/right.jpg"));
+	    rightImage = icon.getImage();
+	    
 	}
 	public void keyPressed(KeyEvent e) {
 	int keyCode = e.getKeyCode();
@@ -488,11 +619,20 @@ public class MyPanel extends JPanel implements KeyListener{
 		break;
 	case KeyEvent.VK_J:
 		if(getMap(level)[x][y]==11) {
+			if(choose ==1) {
+			     choose(1);
+			 }
 			if(choose ==2) {
 			     choose(2);
 			 }
 			if(choose ==3) {
 				 choose(3);
+				 }
+			if(choose ==4) {
+				 choose(4);
+				 }
+			if(choose ==5) {
+				 choose(5);
 				 }
 		     
 		}
@@ -504,6 +644,17 @@ public class MyPanel extends JPanel implements KeyListener{
 				 usebottle(2);
 		    }
 		     
+		}
+		if(getMap(level)[x][y]==29) {
+			if(choose3 ==1) {
+			     choose3(1);
+			 }
+			if(choose3 ==2) {
+			     choose3(2);
+			 }
+			if(choose3 ==3) {
+			     choose3(3);
+			 }
 		}
 		break;
 	case KeyEvent.VK_3:
@@ -586,6 +737,45 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 		
 	}
+	private void choose3(int i) {
+		switch(i) {
+		case 1 :
+			if(hero.money>=100) {
+			ischoose = false;
+    	    shopping = false;
+    	    canmove = true;
+    	    hero.upgrade();
+    	    }else {
+    	    	System.out.println("No money!!!");
+    	    }
+    	    break;
+		case 2 :
+			if(hero.money>=100) {
+			ischoose = false;
+    	    shopping = false;
+    	    canmove = true;
+			hero.attack = (int) (hero.attack*2.1);
+			}else {
+				System.out.println("No money!!!");
+			}
+			break;
+		case 3 :
+			if(hero.money>=80) {
+			ischoose = false;
+    	    shopping = false;
+    	    canmove = true;
+			hero.defence = (int) (hero.defence*2);
+			}else {
+				System.out.println("No money!!!");
+			}
+			break;
+			
+		default :
+			break;
+		}  
+		
+	}
+
 	private void usebottle(int i) {
 		if(i==1) {
 			if(hero.redbottle==0) {
@@ -647,6 +837,9 @@ public class MyPanel extends JPanel implements KeyListener{
 					choose2 = 1;
 				}
 			}
+			if(shopping) {
+				choose3 = choose3+1;
+			}
 			break;
 			
 		default :
@@ -657,6 +850,13 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 	private void choose(int event) {
 		switch(event) {
+		case 1 :
+			ischoose = false;
+    	    showfly = false;
+    	    canmove = true;
+    	    level = 1;
+    	    x= 13;
+        	y= 13;
 		case 2 :
 			ischoose = false;
     	    showfly = false;
@@ -669,6 +869,23 @@ public class MyPanel extends JPanel implements KeyListener{
 			ischoose = false;
     	    showfly = false;	
 			canmove = true;
+			level = 1;
+    	    x= 6;
+        	y= 7;
+		case 4 :
+			ischoose = false;
+    	    showfly = false;	
+			canmove = true;
+			level = 2;
+    	    x= 8;
+        	y= 7;
+		case 5 :
+			ischoose = false;
+    	    showfly = false;	
+			canmove = true;
+			level = 3;
+    	    x= 2;
+        	y= 13;
 			break;
 		default :
 			break;
@@ -693,7 +910,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		
 	}
 	private boolean isAllow(int x,int y) {
-		if(getMap(level)[x][y]==1) {
+		if(getMap(level)[x][y]==1||getMap(level)[x][y]==27) {
 			return false;
 		}
 		if(getMap(level)[x][y]==6) {
@@ -756,11 +973,21 @@ public class MyPanel extends JPanel implements KeyListener{
 			hero.changebottle(16);	
 			getMap(level)[x][y]=0;
 		}
+		if(getMap(level)[x][y]==29) {		
+			shop();
+		
+		}
 		
 		return true;
 	}
 
 	
+	private void shop() {
+		JOptionPane.showMessageDialog(this,"You can buy something");	   
+	    ischoose = true;
+	    shopping = true;	
+	}
+
 	private void fight(int x) {
 		JOptionPane.showMessageDialog(this,"Fight begin ");	
 		fight = true;

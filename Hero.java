@@ -42,6 +42,7 @@ public class Hero {
     public void printstate() {
     	System.out.println("  hp:  "+this.hp+"    "+"  money:  "+this.money+"    "+"  experience:  "+this.experience+"    ");
     	System.out.println("  yellowkey:  "+this.yellowkey+"    "+"  bluekey:  "+this.bluekey+"    "+"  redkey:  "+this.redkey+"    ");
+    	System.out.println("  attack:  "+this.attack+"    "+"  defence:  "+this.defence);
     }
     public void keychange(int a) {
     	if(a==2) {
@@ -71,6 +72,13 @@ public class Hero {
 		if(i==16) {
     		bluebottle = bluebottle+1;
     	}
+		
+	}
+	public void upgrade() {
+		this.level = this.level +1;
+		this.hp =  (int) (attack*2.2);
+		this.attack = (int) (attack*1.9);
+		this.defence = (int) (defence*1.7);
 		
 	}
    
