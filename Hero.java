@@ -9,6 +9,8 @@ public class Hero {
 	int yellowkey;
 	int bluekey;
 	int redkey;
+	int bluebottle;
+	int redbottle;
     Hero(){
     	level = 1;
     	hp=1000;
@@ -19,6 +21,8 @@ public class Hero {
     	yellowkey = 0;
     	bluekey = 0;
     	redkey = 0;
+    	 bluebottle=0;
+    	 redbottle=0;
     }
     int gethp() {
 		return hp;

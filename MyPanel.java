@@ -152,8 +152,10 @@ public class MyPanel extends JPanel implements KeyListener{
     private java.awt.Image ykeyImage;
     private java.awt.Image rkeyImage;
     private java.awt.Image bkeyImage;
-    
-    
+    private java.awt.Image bbottleImage;
+    private java.awt.Image rbottleImage;
+    private java.awt.Image bbottle2Image;
+    private java.awt.Image rbottle2Image;
     
     private int x,y;
     private static final int LEFT = 0;
@@ -223,7 +225,7 @@ public class MyPanel extends JPanel implements KeyListener{
     }
 	private void drawFight(Graphics g,int num) {
 		String string6 = new String("Fight");
-		g.setColor(Color.BLUE);
+		g.setColor(Color.WHITE);
 		g.fillRect(3*CS, 2*CS, 5*CS, 5*CS);
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
 		g.drawString(string6,4*CS, 2*CS);
@@ -234,6 +236,7 @@ public class MyPanel extends JPanel implements KeyListener{
 		
 	}
 	private void drawPackage(Graphics g) {
+		g.setColor(Color.RED);
 		String string6 = new String("Your Package");
 		g.setColor(Color.BLUE);
 	
@@ -248,21 +251,33 @@ public class MyPanel extends JPanel implements KeyListener{
 		g.drawImage(ykeyImage,3*CS,2*CS,CS,CS,this);
 		g.drawImage(bkeyImage,3*CS,3*CS,CS,CS,this);
 		g.drawImage(rkeyImage,3*CS,4*CS,CS,CS,this);
+		g.drawImage(bbottle2Image,4*CS+20,2*CS,CS,CS,this);
+		g.drawImage(rbottle2Image,4*CS+20,3*CS,CS,CS,this);
+		
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
 		String h  =  " "+hero.yellowkey;
-		g.drawString(h,4*CS,3*CS-10); 
+		g.drawString(h,4*CS,3*CS-10);
+		
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
-		String o  =  " "+hero.bluekey;
-		
+		String o  =  " "+hero.bluekey;		
 		g.drawString(o,4*CS,4*CS-10); 
+		
 		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
 		g.setColor(Color.BLACK);
 		String p  =  " "+hero.redkey;
-	
-		g.drawString(p,4*CS,5*CS-10); 
+		g.drawString(p,4*CS,5*CS-10);
 		
+		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
+		g.setColor(Color.BLACK);
+		String h1  =  " "+hero.bluebottle;
+		g.drawString(h,5*CS+20,3*CS-10); 
+		
+		g.setFont(new Font("ITALIC ", Font.BOLD, 15));
+		g.setColor(Color.BLACK);
+		String h2  =  " "+hero.redbottle;
+		g.drawString(h,5*CS+20,4*CS-10); 
 	}
 	private void drawFly(Graphics g) {
 		canmove = false;
@@ -422,6 +437,14 @@ public class MyPanel extends JPanel implements KeyListener{
 	    bkeyImage = icon.getImage();
 	    icon = new ImageIcon(getClass().getResource("image/101-03.png"));
 	    rkeyImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/bt.jpg"));
+	    bbottleImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/rt.jpg"));
+	    rbottleImage = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/103-10.png"));
+	    bbottle2Image = icon.getImage();
+	    icon = new ImageIcon(getClass().getResource("image/103-11.png"));
+	    rbottle2Image = icon.getImage();
 	}
 	public void keyPressed(KeyEvent e) {
 	int keyCode = e.getKeyCode();
