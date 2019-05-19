@@ -651,56 +651,86 @@ public class MyPanel extends JPanel implements KeyListener{
 	}
 	public void keyPressed(KeyEvent e) {
 	int keyCode = e.getKeyCode();
+	   SoundPlayer sound = new SoundPlayer();
+		
+			
+			sound.loadSound("mota/moving.wav");
+		    sound.playSound();
 	
 	switch(keyCode) {
 	case KeyEvent.VK_LEFT:
+		   sound.playSound();
 		move(LEFT);
 		break;
 	case KeyEvent.VK_RIGHT:
+		   sound.playSound();
 		move(RIGHT);
 		break;
 	case KeyEvent.VK_UP:
+		   sound.playSound();
 		move(UP);
 		break;
 	case KeyEvent.VK_DOWN:
+		   sound.playSound();
 		move(DOWN);
 		break;
 	case KeyEvent.VK_J:
+		
 		if(getMap(level)[x][y]==11) {
+			  SoundPlayer sound1 = new SoundPlayer();
+			
+					sound1.loadSound("mota/choosing.wav");
+				 
 			if(choose ==1) {
+				 sound1.playSound();
 			     choose(1);
 			 }
 			if(choose ==2) {
+				 sound1.playSound();
 			     choose(2);
 			 }
 			if(choose ==3) {
+				 sound1.playSound();
 				 choose(3);
 				 }
 			if(choose ==4) {
+				 sound1.playSound();
 				 choose(4);
 				 }
 			if(choose ==5) {
+				 sound1.playSound();
 				 choose(5);
 				 }
 		     
 		}
 		if(pack ==2 && usingpackage==true) {
+			SoundPlayer sound1 = new SoundPlayer();
+			
+			sound1.loadSound("mota/choosing.wav");
 			if(choose2 ==1) {
+				 sound1.playSound();
 			     usebottle(1);
 			 }
 			if(choose2 == 2) {
+				 sound1.playSound();
 				 usebottle(2);
 		    }
 		     
 		}
 		if(getMap(level)[x][y]==29) {
+            SoundPlayer sound1 = new SoundPlayer();
+			
+			sound1.loadSound("mota/choosing.wav");
 			if(choose3 ==1) {
+				sound1.playSound();
 			     choose3(1);
 			 }
 			if(choose3 ==2) {
+				sound1.playSound();
 			     choose3(2);
 			 }
 			if(choose3 ==3) {
+				sound1.playSound();
 			     choose3(3);
 			 }
 		}
@@ -899,42 +929,55 @@ public class MyPanel extends JPanel implements KeyListener{
 	private void choose(int event) {
 		switch(event) {
 		case 1 :
+		{
 			ischoose = false;
     	    showfly = false;
     	    canmove = true;
     	    level = 1;
     	    x= 13;
         	y= 13;
+		}
+		break;
 		case 2 :
+		{
 			ischoose = false;
     	    showfly = false;
     	    canmove = true;
     	    level = 0;
     	    x= 7;
         	y= 14;
-    	   
+		}
+		break;
 		case 3 :
+		{
 			ischoose = false;
     	    showfly = false;	
 			canmove = true;
 			level = 1;
     	    x= 6;
         	y= 7;
+		}
+		break;
 		case 4 :
+		{
 			ischoose = false;
     	    showfly = false;	
 			canmove = true;
 			level = 2;
     	    x= 8;
         	y= 7;
+		}
+		    break;
 		case 5 :
+		{
 			ischoose = false;
     	    showfly = false;	
 			canmove = true;
 			level = 3;
     	    x= 2;
         	y= 13;
-			break;
+		}
+		    break;
 		default :
 			break;
 		}
@@ -958,6 +1001,11 @@ public class MyPanel extends JPanel implements KeyListener{
 		
 	}
 	private boolean isAllow(int x,int y) {
+		 SoundPlayer sound = new SoundPlayer();
+			
+			
+			sound.loadSound("mota/choosing.wav");
+		
 		if(getMap(level)[x][y]==1||getMap(level)[x][y]==27) {
 			return false;
 		}
@@ -971,16 +1019,19 @@ public class MyPanel extends JPanel implements KeyListener{
 		if(getMap(level)[x][y]==2) {
 			hero.keychange(2);
 			hero.printstate();
+		    sound.playSound();
 			getMap(level)[x][y]=0;
 		}
 		if(getMap(level)[x][y]==3) {
 			hero.keychange(3);
 			hero.printstate();
+		    sound.playSound();
 			getMap(level)[x][y]=0;
 		}
 		if(getMap(level)[x][y]==4){
 			hero.keychange(4);
 			hero.printstate();
+		    sound.playSound();
 			getMap(level)[x][y]=0;
 		}
 		if(getMap(level)[x][y]==8){
@@ -1040,10 +1091,12 @@ public class MyPanel extends JPanel implements KeyListener{
 		}
 		if(getMap(level)[x][y]==15) {		
 			hero.changebottle(15);	
+		    sound.playSound();
 			getMap(level)[x][y]=0;
 		}
 		if(getMap(level)[x][y]==16) {		
 			hero.changebottle(16);	
+		    sound.playSound();
 			getMap(level)[x][y]=0;
 		}
 		if(getMap(level)[x][y]==29) {		
@@ -1064,7 +1117,11 @@ public class MyPanel extends JPanel implements KeyListener{
 	private void fight(int x) {
 		JOptionPane.showMessageDialog(this,"Fight begin ");	
 		fight = true;
-		
+		 SoundPlayer sound = new SoundPlayer();
+			
+			
+			sound.loadSound("mota/fight.wav");
+		    sound.playSound();
 		
 		if(x==14) {
 			int heroinjure = 0;
