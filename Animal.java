@@ -1,6 +1,6 @@
 
 public class Animal {
-
+	
 	private String name;
 	private int level;
 	private int hp;
@@ -8,40 +8,32 @@ public class Animal {
 	private int defence;
 	private int money;
 	private int experience;
-
-	Animal(String j, int a, int b, int c, int d, int e, int f) {
-		name = j;
+	Animal(String j,int a,int b ,int c,int d,int e,int f){
+	    name = j;
 		level = a;
-		hp = b;
+		hp=b;
 		attack = c;
 		defence = d;
 		money = e;
 		experience = f;
 	}
-
-	int gethp() {
+    int gethp() {
 		return hp;
 	}
-
 	int getattack() {
 		return hp;
 	}
-
-	int getdefence() {
+    int getdefence() {
 		return defence;
 	}
-
-	int getmoney() {
+    int getmoney() {
 		return money;
 	}
-
-	int getexperience() {
+    int getexperience() {
 		return experience;
 	}
-
-	public void printstate() {
-		System.out.println("  hp:  " + this.hp + "    " + "  money:  " + this.money + "    " + "  experience:  "
-				+ this.experience + "    ");
-
-	}
+public void printstate() {
+	System.out.println("  hp:  "+this.hp+"    "+"  money:  "+this.money+"    "+"  experience:  "+this.experience+"    ");
+	
+}
 }

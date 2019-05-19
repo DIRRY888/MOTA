@@ -1,114 +1,85 @@
 
 public class Hero {
-	private int level;
-	int Life;
-	int attack;
+	private int level;//英雄等级
+	int hp;
+    int attack;
 	int defence;
 	int money;
 	int experience;
 	int yellowkey;
 	int bluekey;
 	int redkey;
-
-	Hero() {
-		level = 1;
-		Life = 1000;
-		attack = 50;
-		defence = 30;
-		money = 0;
-		experience = 0;
-		yellowkey = 0;
-		bluekey = 0;
-		redkey = 0;
+	int bluebottle;
+	int redbottle;
+    Hero(){
+    	level = 1;
+    	hp=4000;
+    	attack =50;
+    	defence = 30;
+    	money = 0;
+    	experience = 0;
+    	yellowkey = 0;
+    	bluekey = 0;
+    	redkey = 0;
+    	 bluebottle=0;
+    	 redbottle=0;
+    }
+    int gethp() {
+		return hp;
 	}
-
-	int getLife() {
-		return Life;
-	}
-
-	int getAttack() {
+	int getattack() {
 		return attack;
 	}
-
-	int getDefence() {
+    int getdefence() {
 		return defence;
 	}
-
-	int getMoney() {
+    int getmoney() {
 		return money;
 	}
-
-	int getExperience() {
+    int getexperience() {
 		return experience;
 	}
-
-	public void printstate() {
-		System.out.println("  hp:  " + this.Life + "    " + "  money:  " + this.money + "    " + "  experience:  "
-				+ this.experience + "    ");
-		System.out.println("  yellowkey:  " + this.yellowkey + "    " + "  bluekey:  " + this.bluekey + "    "
-				+ "  redkey:  " + this.redkey + "    ");
+    public void printstate() {
+    	System.out.println("  hp:  "+this.hp+"    "+"  money:  "+this.money+"    "+"  experience:  "+this.experience+"    ");
+    	System.out.println("  yellowkey:  "+this.yellowkey+"    "+"  bluekey:  "+this.bluekey+"    "+"  redkey:  "+this.redkey+"    ");
+    	System.out.println("  attack:  "+this.attack+"    "+"  defence:  "+this.defence);
+    }
+    public void keychange(int a) {
+    	if(a==2) {
+    		redkey = redkey+1;
+    	}
+    	if(a==3) {
+    		yellowkey = yellowkey +1;
+    	}
+    	if(a==4) {
+    		bluekey = bluekey + 1;
+    	}
+    	if(a==8) {
+    		yellowkey = yellowkey - 1;
+    	}
+    	if(a==9) {
+    		redkey = redkey - 1;
+    	}
+    	if(a==10) {
+    		bluekey = bluekey - 1;
+    	}
+    	
+    }
+	public void changebottle(int i) {
+		if(i==15) {
+    		redbottle = redbottle+1;
+    	}
+		if(i==16) {
+    		bluebottle = bluebottle+1;
+    	}
+		
 	}
-
-	public void keychange(int a) {
-		if (a == 2) {
-			redkey = redkey + 1;
-		}
-		if (a == 3) {
-			yellowkey = yellowkey + 1;
-		}
-		if (a == 4) {
-			bluekey = bluekey + 1;
-		}
-		if (a == 8) {
-			yellowkey = yellowkey - 1;
-		}
-		if (a == 9) {
-			redkey = redkey - 1;
-		}
-		if (a == 10) {
-			bluekey = bluekey - 1;
-		}
-
+	public void upgrade() {
+		this.level = this.level +1;
+		this.hp =  (int) (attack*2.2);
+		this.attack = (int) (attack*1.9);
+		this.defence = (int) (defence*1.7);
+		
 	}
-
-	public int attack(Monster monster) {
-		int hero_life = getLife();
-		int hero_attack = getAttack();
-		int hero_defence = getDefence();
-		int hero_money = getMoney();
-		int hero_experience = getExperience();
-
-		int monster_life = monster.getLife();
-		int monster_defence = monster.getDefence();
-		int monster_attack = monster.getAttack();
-
-		if (hero_defence > monster_attack && hero_attack > monster_defence) {
-			// 如果英雄的攻击力和防御力都要比怪兽大，直接获得金钱和经验
-			hero_money = hero_money + monster.getMoney();
-			hero_experience = hero_experience + monster.getExperience();
-			return 1;
-		} else if (hero_defence < monster_attack && hero_attack < monster_defence) {
-			// 如果英雄的攻击力和防御力都比怪兽要小，不能打，溜！
-			return -1;
-		} else if (hero_attack > monster_defence && hero_defence < monster_attack) {
-			// hero攻击 > monster防御，hero防御 < monster攻击，可以打，减血
-			while (monster_life > 0) {
-				monster_life = monster_life - (hero_attack - monster_defence);
-				hero_life = hero_life - (monster_attack - hero_defence);
-			}
-			hero_money = hero_money + monster.getMoney();
-			hero_experience = hero_experience + monster.getExperience();
-			return 0;
-		} else {
-			// (hero_attack < monster_defence && hero_defence > monster_attack)
-			// hero攻击 < monster防御，hero防御 > monster攻击，可以打，掉血
-			while (monster_life > 0) {
-				monster_life = monster_life - (monster_defence - hero_attack);
-				hero_life = hero_life - (hero_defence - monster_attack);
-			}
-			hero_money = hero_money + monster.getMoney();
-			hero_experience = hero_experience + monster.getExperience();
-			return 0;
-		}
-	}
+   
 }
