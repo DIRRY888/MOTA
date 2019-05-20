@@ -1,6 +1,6 @@
 
 public class Hero {
-	private int level;
+	int level;
 	int Life;
 	int attack;
 	int defence;
@@ -9,8 +9,9 @@ public class Hero {
 	int yellowkey;
 	int bluekey;
 	int redkey;
+	private int uniqueKey;
 
-	Hero() {
+	public Hero() {
 		level = 1;
 		Life = 1000;
 		attack = 50;
@@ -20,6 +21,7 @@ public class Hero {
 		yellowkey = 0;
 		bluekey = 0;
 		redkey = 0;
+		uniqueKey = 0;
 	}
 
 	int getLife() {
@@ -49,26 +51,32 @@ public class Hero {
 				+ "  redkey:  " + this.redkey + "    ");
 	}
 
-	public void keychange(int a) {
-		if (a == 2) {
+	public void keychange(int meet) {
+		if (meet == 21) {
 			redkey = redkey + 1;
 		}
-		if (a == 3) {
+		if (meet == 22) {
 			yellowkey = yellowkey + 1;
 		}
-		if (a == 4) {
+		if (meet == 20) {
 			bluekey = bluekey + 1;
 		}
-		if (a == 8) {
+		if (meet == 11) {
 			yellowkey = yellowkey - 1;
 		}
-		if (a == 9) {
+		if (meet == 9) {
 			redkey = redkey - 1;
 		}
-		if (a == 10) {
+		if (meet == 8) {
 			bluekey = bluekey - 1;
 		}
-
+		if (meet == 23) {
+			uniqueKey = uniqueKey + 1;
+		}
+		if (meet == 10) {
+			uniqueKey = uniqueKey - 1;
+		}
+			
 	}
 
 	public int attack(Monster monster) {
