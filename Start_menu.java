@@ -40,6 +40,7 @@ public class Start_menu extends JFrame {
 	
 	public static void main(String[] args) {
 		new Start_menu();
+		new Score_menu();
 		Window e1 = new Window();
 		e1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		e1.setLocationRelativeTo(null);

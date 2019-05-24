@@ -202,6 +202,7 @@ public class MyPanel extends JPanel implements KeyListener {
 	private java.awt.Image inforPanelImage;
 	private java.awt.Image titlePanelImage;
 	private java.awt.Image gameOverImage;
+	private java.awt.Image heroDisplayImage;
 	private Icon mapPanelImage;
 
 	private int x, y;
@@ -458,37 +459,39 @@ public class MyPanel extends JPanel implements KeyListener {
 
 	private void drawFight(Graphics g, int num) {
 		String string6 = new String("V--S");
-		g.setColor(Color.WHITE);
-		g.fillRect(3 * CS, 2 * CS, 5 * CS, 5 * CS);
-		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
-		g.setColor(Color.BLACK);
-		g.drawString(string6, 5 * CS, 4 * CS - 10);
-		g.drawImage(heroImage, 3 * CS, 3 * CS, CS, CS, this);
-		g.setColor(Color.BLACK);
-		g.drawRoundRect(3 * CS, 2 * CS, 5 * CS, 5 * CS, 10, 10);
-		g.drawRoundRect(3 * CS - 2, 2 * CS - 2, 5 * CS + 2, 5 * CS + 2, 15, 15);
-		g.drawRoundRect(3 * CS - 3, 2 * CS - 3, 5 * CS + 4, 5 * CS + 4, 15, 15);
-		g.drawRoundRect(3 * CS - 4, 2 * CS - 4, 5 * CS + 6, 5 * CS + 6, 15, 15);
+//		g.setColor(Color.WHITE);
+//		g.fillRect(3 * CS, 2 * CS, 5 * CS, 5 * CS);
+//		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
+//		g.setColor(Color.BLACK);
+//		g.drawString(string6, 5 * CS, 4 * CS - 10);
+//		g.drawImage(heroImage, 3 * CS, 3 * CS, CS, CS, this);
+//		g.setColor(Color.BLACK);
+//		g.drawRoundRect(3 * CS, 2 * CS, 5 * CS, 5 * CS, 10, 10);
+//		g.drawRoundRect(3 * CS - 2, 2 * CS - 2, 5 * CS + 2, 5 * CS + 2, 15, 15);
+//		g.drawRoundRect(3 * CS - 3, 2 * CS - 3, 5 * CS + 4, 5 * CS + 4, 15, 15);
+//		g.drawRoundRect(3 * CS - 4, 2 * CS - 4, 5 * CS + 6, 5 * CS + 6, 15, 15);
+		g.drawImage(inforPanelImage, 0, 5*CS, 15*CS, 5*CS, this);
+		g.drawImage(heroDisplayImage, CS, 7*CS, 48, 48, this);
 		if (num == 14) {
-			g.drawImage(M1Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M1Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 		if (num == 17) {
-			g.drawImage(M2Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M2Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 		if (num == 18) {
-			g.drawImage(M3Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M3Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 		if (num == 19) {
-			g.drawImage(M4Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M4Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 		if (num == 20) {
-			g.drawImage(M5Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M5Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 		if (num == 21) {
-			g.drawImage(M6Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M6Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 		if (num == 22) {
-			g.drawImage(M7Image, 7 * CS, 3 * CS, CS, CS, this);
+			g.drawImage(M7Image, 13 * CS, 7 * CS, CS, CS, this);
 		}
 
 	}
@@ -810,6 +813,8 @@ public class MyPanel extends JPanel implements KeyListener {
 		mapPanelImage = icon;
 		icon = new ImageIcon(getClass().getResource("image/gameover.png"));
 		gameOverImage = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("image/heroDisplay.png"));
+		heroDisplayImage = icon.getImage();
 
 		icon = new ImageIcon(getClass().getResource("image/Ocean.png"));
 		oceanImage = icon.getImage();
@@ -1319,7 +1324,23 @@ public class MyPanel extends JPanel implements KeyListener {
 			shop();
 
 		}
-
+		// for sword and shield in level 5
+		if (getMap(level)[x][y] == 25) {
+			hero.attack += 50;
+			getMap(level)[x][y] = 0;
+		}
+		if (getMap(level)[x][y] == 26) {
+			hero.defence += 50;
+			getMap(level)[x][y] = 0;
+		}
+		if (getMap(level)[x][y] == 23) {
+			hero.attack += 20;
+			getMap(level)[x][y] = 0;
+		}
+		if (getMap(level)[x][y] == 24) {
+			hero.defence += 20;
+			getMap(level)[x][y] = 0;
+		}
 		return true;
 	}
 
