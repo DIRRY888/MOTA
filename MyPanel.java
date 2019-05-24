@@ -30,6 +30,7 @@ public class MyPanel extends JPanel implements KeyListener {
 
 	private static int map[][][] = {
 			// 0
+<<<<<<< HEAD
 			{ 
 				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
 				{ 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 },
@@ -65,6 +66,28 @@ public class MyPanel extends JPanel implements KeyListener {
 				{ 1, 7,14, 1, 0, 1, 0,16, 0, 1, 0, 1, 18, 11, 1 },
 				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, 
 			},
+=======
+			{ { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 },
+					{ 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 }, { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 },
+					{ 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 }, { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 },
+					{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 7, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+					{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 },
+					{ 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 }, { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 },
+					{ 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 }, { 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 },
+					{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, },
+			// 1
+			{ { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1 },
+					{ 1, 3, 4, 2, 1, 1, 1, 1, 1, 1, 1, 2, 4, 3, 1 }, { 1, 3, 4, 0, 1, 0, 3, 17, 0, 0, 1, 0, 4, 3, 1 },
+					{ 1, 3, 0, 0, 1, 14, 1, 1, 1, 14, 1, 0, 0, 3, 1 },
+					{ 1, 17, 18, 17, 8, 17, 1, 13, 1, 17, 1, 17, 18, 17, 1 },
+					{ 1, 14, 17, 14, 1, 14, 1, 0, 1, 14, 1, 14, 17, 14, 1 },
+					{ 1, 0, 14, 0, 1, 0, 0, 0, 0, 0, 1, 0, 14, 0, 1 }, { 1, 1, 8, 1, 1, 1, 1, 0, 1, 1, 1, 1, 8, 1, 1 },
+					{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, { 1, 1, 1, 1, 0, 1, 1, 10, 1, 1, 0, 1, 1, 1, 1 },
+					{ 1, 0, 15, 1, 0, 1, 0, 17, 0, 1, 0, 1, 15, 14, 1 },
+					{ 1, 14, 0, 9, 0, 1, 0, 0, 0, 1, 0, 9, 14, 18, 1 },
+					{ 1, 7, 14, 1, 0, 1, 0, 16, 0, 1, 0, 1, 18, 11, 1 },
+					{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, },
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 			// 2
 			{ { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 0, 0, 0, 0, 0, 0, 10, 0, 0, 14, 17, 18, 19, 1 },
 					{ 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 18, 1 },
@@ -108,7 +131,12 @@ public class MyPanel extends JPanel implements KeyListener {
 					{ 1, 3, 3, 3, 3, 1, 17, 18, 18, 1, 0, 15, 16, 26, 1 },
 					{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, },
 			// 5
+<<<<<<< HEAD
 			{ {27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 }, {27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 },
+=======
+			{ 		{27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 }, 
+					{27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 },
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 					{27, 25, 0, 0, 8,19, 0, 0, 18, 18, 18, 0, 0, 0,27 },
 					{27, 0, 0, 0,27, 27, 27, 27, 27, 7, 27, 27, 27, 18,27 },
 					{27,27,27,27,27, 27, 27, 27, 27, 27, 27, 27, 27, 17,27 },
@@ -119,6 +147,7 @@ public class MyPanel extends JPanel implements KeyListener {
 					{27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 18,27 },
 					{27,27,27,27,27, 27, 27, 27, 27, 27, 27, 27, 27, 17,27 },
 					{27, 0, 0, 0,27, 27, 27, 27, 27, 7, 27, 27, 27, 18,27 },
+<<<<<<< HEAD
 					{27, 26, 0, 0, 8, 19, 0, 0, 18, 18, 18, 0, 0, 0, 27 },
 					{27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 }, {27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 },
 
@@ -158,6 +187,16 @@ public class MyPanel extends JPanel implements KeyListener {
 				{ 1,12,12,12,12,12,12,12,12,12,12,12,12,12, 1},
 				{ 1,12,12,12,12,12,12,12,12,12,12,12,12,12, 1},
 				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+=======
+					{27, 26, 0, 0, 8, 19, 0, 0, 18, 18, 18, 0, 0, 0, 1 },
+					{27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 }, 
+					{27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 },
+
+			},
+			// 6
+			{
+						
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 			}
 	};
 
@@ -176,11 +215,15 @@ public class MyPanel extends JPanel implements KeyListener {
 	private java.awt.Image flyImage;
 	private java.awt.Image blackImage;
 	private java.awt.Image downImage;
+<<<<<<< HEAD
 	
 	private java.awt.Image oceanImage;
 	private java.awt.Image uniqueDoorImage;
 	private java.awt.Image finalKeyImage;
 	
+=======
+
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 	private java.awt.Image swordImage;
 	private java.awt.Image shieldImage;
 	private java.awt.Image chutouImage;
@@ -202,7 +245,10 @@ public class MyPanel extends JPanel implements KeyListener {
 
 	private java.awt.Image greengemImage;
 	private java.awt.Image yellowgemImage;
+<<<<<<< HEAD
 	private java.awt.Image princess;
+=======
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 
 	private java.awt.Image forestImage;
 	private java.awt.Image leftImage;
@@ -301,11 +347,19 @@ public class MyPanel extends JPanel implements KeyListener {
 		if (fight == true && getMap(level)[x][y] == 19) {
 			drawFight(g, 19);
 			getMap(level)[x][y] = 0;
+<<<<<<< HEAD
 		}
 		if (fight == true && getMap(level)[x][y] == 20) {
 			drawFight(g, 20);
 			getMap(level)[x][y] = 0;
 		}
+=======
+		}
+		if (fight == true && getMap(level)[x][y] == 20) {
+			drawFight(g, 20);
+			getMap(level)[x][y] = 0;
+		}
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 		if (fight == true && getMap(level)[x][y] == 21) {
 			drawFight(g, 21);
 			getMap(level)[x][y] = 0;
@@ -423,9 +477,62 @@ public class MyPanel extends JPanel implements KeyListener {
 			int c = 0;
 			while (c != 15)
 				g.drawImage(gameOverImage, c * CS, c * CS, CS, CS, this);
+<<<<<<< HEAD
+=======
 		}
 	}
 
+	private void drawChooseshop(Graphics g, int choose3) {
+		g.setColor(Color.WHITE);
+		g.fillRect(70, choose3 * 40 + 58, 10, 5);
+
+	}
+
+	private void drawShop(Graphics g) {
+		canmove = false;
+		String string4 = new String("");
+		String string5 = new String("");
+		String string6 = new String("");
+
+		g.setColor(Color.BLACK);
+		g.fillRect(60, 45, 250, 200);
+		g.setColor(Color.RED);
+
+		g.drawRoundRect(60, 45, 250, 200, 10, 10);
+		g.drawRoundRect(59, 44, 252, 202, 10, 10);
+		g.drawRoundRect(58, 43, 254, 204, 10, 10);
+		g.drawRoundRect(57, 42, 256, 206, 10, 10);
+		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
+		string4 = "Using 100 upgrade level";
+		string5 = "Using 80 increase attack";
+		string6 = "Using 80 increase defence";
+		g.setColor(Color.GREEN);
+
+		g.setColor(Color.WHITE);
+
+		g.drawString(string4, 90, 105);
+		g.drawString(string5, 90, 145);
+		g.drawString(string6, 90, 185);
+		if (choose3 == 4) {
+			choose3 = 1;
+		}
+
+	}
+
+	private void drawChoosebottle(Graphics g, int chooses2) {
+		if (choose2 == 1) {
+			g.setColor(Color.RED);
+			g.fillRect(5 * CS + 20 + 30, 2 * CS - 30 + choose2 * 45, 10, 5);
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
+		}
+		if (choose2 == 2) {
+			g.setColor(Color.RED);
+			g.fillRect(5 * CS + 20 + 30, 2 * CS - 45 + choose2 * 45, 10, 5);
+		}
+
+	}
+
+<<<<<<< HEAD
 	private void drawChooseshop(Graphics g, int choose3) {
 		g.setColor(Color.WHITE);
 		g.fillRect(70, choose3 * 40 + 58, 10, 5);
@@ -475,6 +582,8 @@ public class MyPanel extends JPanel implements KeyListener {
 
 	}
 
+=======
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 	private void drawFight(Graphics g, int num) {
 		String string6 = new String("V--S");
 		g.setColor(Color.WHITE);
@@ -703,6 +812,7 @@ public class MyPanel extends JPanel implements KeyListener {
 				}
 				if (getMap(level)[x][y] == 29) {
 					g.drawImage(middleImage, x * CS, y * CS, CS, CS, this);
+<<<<<<< HEAD
 				}
 				if (getMap(level)[x][y] == 30) {
 					g.drawImage(rightImage, x * CS, y * CS, CS, CS, this);
@@ -718,6 +828,11 @@ public class MyPanel extends JPanel implements KeyListener {
 				}
 				if (getMap(level)[x][y] == 34) {
 					g.drawImage(princess, x * CS, y * CS, CS, CS, this);
+=======
+				}
+				if (getMap(level)[x][y] == 30) {
+					g.drawImage(rightImage, x * CS, y * CS, CS, CS, this);
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 				}
 				y++;
 			}
@@ -829,6 +944,7 @@ public class MyPanel extends JPanel implements KeyListener {
 		mapPanelImage = icon;
 		icon = new ImageIcon(getClass().getResource("image/gameover.png"));
 		gameOverImage = icon.getImage();
+<<<<<<< HEAD
 		
 		icon = new ImageIcon(getClass().getResource("image/Ocean.png"));
 		oceanImage = icon.getImage();
@@ -841,6 +957,9 @@ public class MyPanel extends JPanel implements KeyListener {
 		
 		icon = new ImageIcon(getClass().getResource("image/Red1.png"));
 		princess = icon.getImage();
+=======
+
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 	}
 
 	public void keyPressed(KeyEvent e) {
@@ -911,7 +1030,41 @@ public class MyPanel extends JPanel implements KeyListener {
 					sound1.playSound();
 					choose(5);
 				}
+<<<<<<< HEAD
+=======
 
+			}
+			if (pack == 2 && usingpackage == true) {
+				SoundPlayer sound1 = new SoundPlayer();
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
+
+				sound1.loadSound("mota/choosing.wav");
+				if (choose2 == 1) {
+					sound1.playSound();
+					usebottle(1);
+				}
+				if (choose2 == 2) {
+					sound1.playSound();
+					usebottle(2);
+				}
+
+			}
+			if (getMap(level)[x][y] == 29) {
+				SoundPlayer sound1 = new SoundPlayer();
+
+				sound1.loadSound("mota/choosing.wav");
+				if (choose3 == 1) {
+					sound1.playSound();
+					choose3(1);
+				}
+				if (choose3 == 2) {
+					sound1.playSound();
+					choose3(2);
+				}
+				if (choose3 == 3) {
+					sound1.playSound();
+					choose3(3);
+				}
 			}
 			if (pack == 2 && usingpackage == true) {
 				SoundPlayer sound1 = new SoundPlayer();
@@ -1119,6 +1272,69 @@ public class MyPanel extends JPanel implements KeyListener {
 
 	}
 
+	private void choose3(int i) {
+		switch (i) {
+		case 1:
+			if (hero.money >= 100) {
+				ischoose = false;
+				shopping = false;
+				canmove = true;
+				hero.upgrade();
+			} else {
+				System.out.println("No money!!!");
+			}
+			break;
+		case 2:
+			if (hero.money >= 100) {
+				ischoose = false;
+				shopping = false;
+				canmove = true;
+				hero.attack = (int) (hero.attack * 2.1);
+			} else {
+				System.out.println("No money!!!");
+			}
+			break;
+		case 3:
+			if (hero.money >= 80) {
+				ischoose = false;
+				shopping = false;
+				canmove = true;
+				hero.defence = (int) (hero.defence * 2);
+			} else {
+				System.out.println("No money!!!");
+			}
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	private void usebottle(int i) {
+		if (i == 1) {
+			if (hero.redbottle == 0) {
+				System.out.println("no redbotttle");
+				hero.printstate();
+			} else {
+				hero.hp = hero.hp + 300;
+				hero.redbottle = hero.redbottle - 1;
+				hero.printstate();
+			}
+		}
+		if (i == 2) {
+			if (hero.bluebottle == 0) {
+				System.out.println("no bluebotttle");
+				hero.printstate();
+			} else {
+				hero.hp = hero.hp + 500;
+				hero.bluebottle = hero.bluebottle - 1;
+				hero.printstate();
+			}
+		}
+
+	}
+
 	private void move(int event) {
 		switch (event) {
 		case LEFT:
@@ -1246,9 +1462,22 @@ public class MyPanel extends JPanel implements KeyListener {
 		if (getMap(level)[x][y] == 1 || getMap(level)[x][y] == 27) {
 			return false;
 		}
+<<<<<<< HEAD
 		if (getMap(level)[x][y] == 6) {
 			JOptionPane.showMessageDialog(this, "Please save our Princess, Warroir");
 			getMap(level)[x][y] = 0;
+=======
+		if(getMap(level)[x][y]==6) {
+			JOptionPane.showMessageDialog(this, "Hi, nice to meet you ^-^" + '\n' + 				// By NiSha - optimize
+												"Welcome to this island"  + '\n' + 
+												"GO AHEAD! Begin your advanture now!" + '\n' + 
+												"Good luck!" + '\n' + 
+												"------------------------------------" + '\n' + 
+												"Press 'G' for God Mode" + '\n' + 
+												"Press 'J' for confirm" + '\n' + 
+												"Press '3' for close Dialog");
+			getMap(level)[x][y]=0;
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 		}
 		if (getMap(level)[x][y] == 11) {
 			applyFly();
@@ -1337,6 +1566,18 @@ public class MyPanel extends JPanel implements KeyListener {
 		if (getMap(level)[x][y] == 29) {
 			shop();
 
+<<<<<<< HEAD
+=======
+		}
+		// for sword and shield in level 5
+		if (getMap(level)[x][y] == 25) {
+			hero.attack += 50;
+			getMap(level)[x][y] = 0;
+		}
+		if (getMap(level)[x][y] == 26) {
+			hero.defence += 50;
+			getMap(level)[x][y] = 0;
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 		}
 
 		return true;
@@ -1375,6 +1616,7 @@ public class MyPanel extends JPanel implements KeyListener {
 			heroinjure = list.get(1).getattack() - hero.getdefence();
 			animalinjure = hero.getattack() - list.get(1).getdefence();
 			hero.hp = hero.gethp() - heroinjure;
+<<<<<<< HEAD
 			animalhp = animalhp - animalinjure;
 			hero.money = hero.getmoney() + list.get(1).getmoney();
 			hero.experience = hero.getexperience() + list.get(1).getexperience();
@@ -1436,6 +1678,69 @@ public class MyPanel extends JPanel implements KeyListener {
 			animalinjure = hero.getattack() - list.get(6).getdefence();
 			hero.hp = hero.gethp() - heroinjure;
 			animalhp = animalhp - animalinjure;
+=======
+			animalhp = animalhp - animalinjure;
+			hero.money = hero.getmoney() + list.get(1).getmoney();
+			hero.experience = hero.getexperience() + list.get(1).getexperience();
+			hero.printstate();
+		}
+		if (x == 18) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(2).gethp();
+			heroinjure = list.get(2).getattack() - hero.getdefence();
+			animalinjure = hero.getattack() - list.get(2).getdefence();
+			hero.hp = hero.gethp() - heroinjure;
+			animalhp = animalhp - animalinjure;
+			hero.money = hero.getmoney() + list.get(1).getmoney();
+			hero.experience = hero.getexperience() + list.get(2).getexperience();
+			hero.printstate();
+		}
+		if (x == 19) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(3).gethp();
+			heroinjure = list.get(3).getattack() - hero.getdefence();
+			animalinjure = hero.getattack() - list.get(3).getdefence();
+			hero.hp = hero.gethp() - heroinjure;
+			animalhp = animalhp - animalinjure;
+			hero.money = hero.getmoney() + list.get(3).getmoney();
+			hero.experience = hero.getexperience() + list.get(3).getexperience();
+			hero.printstate();
+		}
+		if (x == 20) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(4).gethp();
+			heroinjure = list.get(4).getattack() - hero.getdefence();
+			animalinjure = hero.getattack() - list.get(4).getdefence();
+			hero.hp = hero.gethp() - heroinjure;
+			animalhp = animalhp - animalinjure;
+			hero.money = hero.getmoney() + list.get(4).getmoney();
+			hero.experience = hero.getexperience() + list.get(4).getexperience();
+			hero.printstate();
+		}
+		if (x == 21) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(5).gethp();
+			heroinjure = list.get(5).getattack() - hero.getdefence();
+			animalinjure = hero.getattack() - list.get(5).getdefence();
+			hero.hp = hero.gethp() - heroinjure;
+			animalhp = animalhp - animalinjure;
+			hero.money = hero.getmoney() + list.get(5).getmoney();
+			hero.experience = hero.getexperience() + list.get(5).getexperience();
+			hero.printstate();
+		}
+		if (x == 22) {
+			int heroinjure = 0;
+			int animalinjure = 0;
+			int animalhp = list.get(6).gethp();
+			heroinjure = list.get(6).getattack() - hero.getdefence();
+			animalinjure = hero.getattack() - list.get(6).getdefence();
+			hero.hp = hero.gethp() - heroinjure;
+			animalhp = animalhp - animalinjure;
+>>>>>>> b50bacfbe2573f63d8678fb164e50552696599e2
 			hero.money = hero.getmoney() + list.get(6).getmoney();
 			hero.experience = hero.getexperience() + list.get(6).getexperience();
 			hero.printstate();
