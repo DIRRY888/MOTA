@@ -93,7 +93,8 @@ public class MyPanel extends JPanel implements KeyListener {
 					{ 1, 3, 3, 3, 3, 1, 17, 18, 18, 1, 0, 15, 16, 26, 1 },
 					{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, },
 			// 5
-			{ {27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 }, {27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 },
+			{ 		{27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 }, 
+					{27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 },
 					{27, 25, 0, 0, 8,19, 0, 0, 18, 18, 18, 0, 0, 0,27 },
 					{27, 0, 0, 0,27, 27, 27, 27, 27, 7, 27, 27, 27, 18,27 },
 					{27,27,27,27,27, 27, 27, 27, 27, 27, 27, 27, 27, 17,27 },
@@ -105,7 +106,8 @@ public class MyPanel extends JPanel implements KeyListener {
 					{27,27,27,27,27, 27, 27, 27, 27, 27, 27, 27, 27, 17,27 },
 					{27, 0, 0, 0,27, 27, 27, 27, 27, 7, 27, 27, 27, 18,27 },
 					{27, 26, 0, 0, 8, 19, 0, 0, 18, 18, 18, 0, 0, 0, 1 },
-					{27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 }, {27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 },
+					{27, 0, 0, 0,27,27,27,27,27,27,27,27,27,27,27 }, 
+					{27,27,27,27,27,27,27,27,27,27,27,27,27,27,27 },
 
 			},
 			// 6
@@ -1144,7 +1146,11 @@ public class MyPanel extends JPanel implements KeyListener {
 			JOptionPane.showMessageDialog(this, "Hi, nice to meet you ^-^" + '\n' + 				// By NiSha - optimize
 												"Welcome to this island"  + '\n' + 
 												"GO AHEAD! Begin your advanture now!" + '\n' + 
-												"Good luck!");
+												"Good luck!" + '\n' + 
+												"------------------------------------" + '\n' + 
+												"Press 'G' for God Mode" + '\n' + 
+												"Press 'J' for confirm" + '\n' + 
+												"Press '3' for close Dialog");
 			getMap(level)[x][y]=0;
 		}
 		if (getMap(level)[x][y] == 11) {
@@ -1234,6 +1240,15 @@ public class MyPanel extends JPanel implements KeyListener {
 		if (getMap(level)[x][y] == 29) {
 			shop();
 
+		}
+		// for sword and shield in level 5
+		if (getMap(level)[x][y] == 25) {
+			hero.attack += 50;
+			getMap(level)[x][y] = 0;
+		}
+		if (getMap(level)[x][y] == 26) {
+			hero.defence += 50;
+			getMap(level)[x][y] = 0;
 		}
 
 		return true;
