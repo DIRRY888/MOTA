@@ -7,16 +7,15 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
-public class Start_menu extends JFrame implements MouseListener {
-
+public class Settings extends JFrame implements MouseListener{
 	private static final long serialVersionUID = 1L;
 	int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 	int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 	BufferedImage image = null;
 	int x = 0;
 	int y = 0;
-
-	public Start_menu() {
+	
+	public Settings() {
 		this.setTitle("Let's Rush Out!");
 		this.setLocation((width - Constant.Width)/2, (height - Constant.Height)/2);
 		this.setSize(Constant.Width_Q, Constant.Height_Q);
@@ -24,7 +23,7 @@ public class Start_menu extends JFrame implements MouseListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		try {
-			image = ImageIO.read(new File("./Final Image/menu.jpg"));
+			image = ImageIO.read(new File("./Final Image/settings.jpg"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -49,20 +48,10 @@ public class Start_menu extends JFrame implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent event) {
-		System.out.println(event.getX());
-		System.out.println(event.getY());
 		x = event.getX();
 		y = event.getY();
-		if (x > 140 && x < 600 && y > 240 && y < 300) {
-			new Window();
-			this.setVisible(false);
-		}
-		if (x > 140 && x < 600 && y > 300 && y < 390) {
-			new Score_menu();
-			this.setVisible(false);
-		}
-		if (x > 140 && x < 600 && y > 400 && y < 490) {
-			new Settings();
+		if (x > 540 && x < 720 && y > 420 && y < 495) {
+			new Start_menu();
 			this.setVisible(false);
 		}
 	}
