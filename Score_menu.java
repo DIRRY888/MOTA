@@ -1,5 +1,4 @@
 import java.awt.Graphics;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -10,15 +9,13 @@ import javax.swing.JFrame;
 public class Score_menu extends JFrame implements MouseListener{
 
 	private static final long serialVersionUID = 1L;
-	int width = Toolkit.getDefaultToolkit().getScreenSize().width;
-	int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 	BufferedImage image = null;
 	int x = 0;
 	int y = 0;
 	
 	public Score_menu() {
 		this.setTitle("Let's Rush Out!");
-		this.setLocation((width - Constant.Width)/2, (height - Constant.Height)/2);
+		this.setLocation((Constant.width_Screen - Constant.Width)/2, (Constant.height_Screen - Constant.Height)/2);
 		this.setSize(Constant.Width_Q, Constant.Height_Q);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
