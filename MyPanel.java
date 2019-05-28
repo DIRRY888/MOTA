@@ -1,21 +1,327 @@
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
-import java.util.Vector;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+/*
+ * This class create a new JPanel called buttonPanel
+ * It is for the information that have to be presented in the map guide
+ * after click the map guide button in information panel
+ * the data of monsters and keys wail be shown in a new frame
+ * ask team member NiSha if have any questions please
+ * 
+ * */
+
+class buttonPanel extends JPanel {
+	buttonPanel() {
+		setPreferredSize(new Dimension(500, 355));
+	}
+
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		drawMapInform(g);
+	}
+
+	void drawMapInform(Graphics g) {
+		ImageIcon icon = new ImageIcon(getClass().getResource("image/inforPanel.png"));
+		Image bkImage = icon.getImage();
+
+		icon = new ImageIcon(getClass().getResource("fightImage/1-14.png"));
+		Image m1 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/2-17.png"));
+		Image m2 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/3-18.png"));
+		Image m3 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/4-19.png"));
+		Image m4 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/5-20.png"));
+		Image m5 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/6-21.png"));
+		Image m6 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/7-22.png"));
+		Image m7 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/rk-2.png"));
+		Image rk = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/yk-3.png"));
+		Image yk = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/bk-4.png"));
+		Image bk = icon.getImage();
+
+		int level = MyPanel.level;
+		int nextlevel = level + 1;
+		int prelevel = level - 1;
+
+		g.drawImage(bkImage, 0, 0, 500, 355, this);
+		Color c = new Color(90, 46, 30);
+		g.setColor(c);
+
+		if (level == 0 || level == 1) {
+			g.setFont(new Font("Tahoma", Font.BOLD, 24));
+			g.drawString("NEXT Map ", 30, 50);
+			g.drawString("LEVEL " + String.valueOf(level + 1), 30, 75);
+
+			// check how many types of next level's monster & key
+			int[] type = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+			for (int i = 0; i < MyPanel.map[nextlevel].length; i++) {
+				for (int j = 0; j < MyPanel.map[level][i].length; j++) {
+					if (MyPanel.map[nextlevel][i][j] == 14) {
+						type[0]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 17) {
+						type[1]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 18) {
+						type[2]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 19) {
+						type[3]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 20) {
+						type[4]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 21) {
+						type[5]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 22) {
+						type[6]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 2) {
+						type[7]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 3) {
+						type[8]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 4) {
+						type[9]++;
+					}
+				}
+			}
+
+			// display monsters & keys
+			if (type[0] != 0) {
+				g.drawImage(m1, 30, 100, 32, 32, this);
+				g.drawString(String.valueOf(type[0]), 70, 125);
+			}
+			if (type[1] != 0) {
+				g.drawImage(m2, 30, 140, 32, 32, this);
+				g.drawString(String.valueOf(type[1]), 70, 165);
+			}
+			if (type[2] != 0) {
+				g.drawImage(m3, 30, 180, 32, 32, this);
+				g.drawString(String.valueOf(type[2]), 70, 205);
+			}
+			if (type[3] != 0) {
+				g.drawImage(m4, 30, 220, 32, 32, this);
+				g.drawString(String.valueOf(type[3]), 70, 245);
+			}
+			if (type[4] != 0) {
+				g.drawImage(m5, 30, 260, 32, 32, this);
+				g.drawString(String.valueOf(type[4]), 70, 285);
+			}
+			if (type[5] != 0) {
+				g.drawImage(m6, 30, 300, 32, 32, this);
+				g.drawString(String.valueOf(type[5]), 70, 325);
+			}
+			if (type[6] != 0) {
+				g.drawImage(m7, 30, 340, 32, 32, this);
+				g.drawString(String.valueOf(type[6]), 70, 365);
+			}
+			if (type[7] != 0) {
+				g.drawImage(rk, 130, 100, 32, 32, this);
+				g.drawString(String.valueOf(type[7]), 170, 125);
+			}
+			if (type[8] != 0) {
+				g.drawImage(yk, 130, 140, 32, 32, this);
+				g.drawString(String.valueOf(type[8]), 170, 165);
+			}
+			if (type[9] != 0) {
+				g.drawImage(bk, 130, 180, 32, 32, this);
+				g.drawString(String.valueOf(type[9]), 170, 205);
+			}
+
+		} else {
+			g.setFont(new Font("Tahoma", Font.BOLD, 21));
+			g.drawString("PREVIOUS Map", 30, 50);
+			g.drawString("LEVEL " + String.valueOf(level - 1), 30, 75);
+			g.drawString("NEXT Map", 280, 50);
+			g.drawString("LEVEL " + String.valueOf(level + 1), 280, 75);
+
+			// check how many types of next level's monster & key
+			int[] type = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+			for (int i = 0; i < MyPanel.map[nextlevel].length; i++) {
+				for (int j = 0; j < MyPanel.map[level][i].length; j++) {
+					if (MyPanel.map[nextlevel][i][j] == 14) {
+						type[0]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 17) {
+						type[1]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 18) {
+						type[2]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 19) {
+						type[3]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 20) {
+						type[4]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 21) {
+						type[5]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 22) {
+						type[6]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 2) {
+						type[7]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 3) {
+						type[8]++;
+					}
+					if (MyPanel.map[nextlevel][i][j] == 4) {
+						type[9]++;
+					}
+				}
+			}
+
+			// display monsters & keys
+			if (type[0] != 0) {
+				g.drawImage(m1, 280, 100, 32, 32, this);
+				g.drawString(String.valueOf(type[0]), 320, 125);
+			}
+			if (type[1] != 0) {
+				g.drawImage(m2, 280, 140, 32, 32, this);
+				g.drawString(String.valueOf(type[1]), 320, 165);
+			}
+			if (type[2] != 0) {
+				g.drawImage(m3, 280, 180, 32, 32, this);
+				g.drawString(String.valueOf(type[2]), 320, 205);
+			}
+			if (type[3] != 0) {
+				g.drawImage(m4, 280, 220, 32, 32, this);
+				g.drawString(String.valueOf(type[3]), 320, 245);
+			}
+			if (type[4] != 0) {
+				g.drawImage(m5, 280, 260, 32, 32, this);
+				g.drawString(String.valueOf(type[4]), 320, 285);
+			}
+			if (type[5] != 0) {
+				g.drawImage(m6, 280, 300, 32, 32, this);
+				g.drawString(String.valueOf(type[5]), 320, 325);
+			}
+			if (type[6] != 0) {
+				g.drawImage(m7, 280, 340, 32, 32, this);
+				g.drawString(String.valueOf(type[6]), 320, 365);
+			}
+			if (type[7] != 0) {
+				g.drawImage(rk, 380, 100, 32, 32, this);
+				g.drawString(String.valueOf(type[7]), 420, 125);
+			}
+			if (type[8] != 0) {
+				g.drawImage(yk, 380, 140, 32, 32, this);
+				g.drawString(String.valueOf(type[8]), 420, 165);
+			}
+			if (type[9] != 0) {
+				g.drawImage(bk, 380, 180, 32, 32, this);
+				g.drawString(String.valueOf(type[9]), 420, 205);
+			}
+
+			// check how many types of previous level's monster & key
+			int[] type1 = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+			for (int i = 0; i < MyPanel.map[prelevel].length; i++) {
+				for (int j = 0; j < MyPanel.map[level][i].length; j++) {
+					if (MyPanel.map[prelevel][i][j] == 14) {
+						type1[0]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 17) {
+						type1[1]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 18) {
+						type1[2]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 19) {
+						type1[3]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 20) {
+						type1[4]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 21) {
+						type1[5]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 22) {
+						type1[6]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 2) {
+						type1[7]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 3) {
+						type1[8]++;
+					}
+					if (MyPanel.map[prelevel][i][j] == 4) {
+						type1[9]++;
+					}
+				}
+			}
+
+			// display monsters & keys
+			if (type1[0] != 0) {
+				g.drawImage(m1, 30, 100, 32, 32, this);
+				g.drawString(String.valueOf(type[0]), 70, 125);
+			}
+			if (type1[1] != 0) {
+				g.drawImage(m2, 30, 140, 32, 32, this);
+				g.drawString(String.valueOf(type[1]), 70, 165);
+			}
+			if (type1[2] != 0) {
+				g.drawImage(m3, 30, 180, 32, 32, this);
+				g.drawString(String.valueOf(type[2]), 70, 205);
+			}
+			if (type1[3] != 0) {
+				g.drawImage(m4, 30, 220, 32, 32, this);
+				g.drawString(String.valueOf(type[3]), 70, 245);
+			}
+			if (type1[4] != 0) {
+				g.drawImage(m5, 30, 260, 32, 32, this);
+				g.drawString(String.valueOf(type[4]), 70, 285);
+			}
+			if (type1[5] != 0) {
+				g.drawImage(m6, 30, 300, 32, 32, this);
+				g.drawString(String.valueOf(type[5]), 70, 325);
+			}
+			if (type1[6] != 0) {
+				g.drawImage(m7, 30, 340, 32, 32, this);
+				g.drawString(String.valueOf(type[6]), 70, 365);
+			}
+			if (type1[7] != 0) {
+				g.drawImage(rk, 130, 100, 32, 32, this);
+				g.drawString(String.valueOf(type[7]), 170, 125);
+			}
+			if (type1[8] != 0) {
+				g.drawImage(yk, 130, 140, 32, 32, this);
+				g.drawString(String.valueOf(type[8]), 170, 165);
+			}
+			if (type1[9] != 0) {
+				g.drawImage(bk, 130, 180, 32, 32, this);
+				g.drawString(String.valueOf(type[9]), 170, 205);
+			}
+
+		}
+
+	}
+}
 
 public class MyPanel extends JPanel implements KeyListener {
 	private static final long serialVersionUID = 1L;
@@ -28,7 +334,7 @@ public class MyPanel extends JPanel implements KeyListener {
 	// the size of very grid
 	private static final int CS = 32;
 
-	private static int map[][][] = {
+	static int map[][][] = {
 			// 0
 			{ { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }, { 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 },
 					{ 1, 5, 5, 5, 5, 1, 5, 5, 5, 5, 1, 5, 5, 5, 1 }, { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1 },
@@ -218,7 +524,7 @@ public class MyPanel extends JPanel implements KeyListener {
 	private Thread threadAnime;
 	private int direction;
 
-	private int level; /* level of tower */
+	static int level; /* level of tower */
 	private boolean ischoose = false;
 	private boolean showfly = false;
 	private boolean canmove = true;
@@ -259,12 +565,12 @@ public class MyPanel extends JPanel implements KeyListener {
 		drawMap(g);
 		drawRole(g);
 		drawInformationPanel(g);
-		gameOver(g);
 		if (showfly == true && getMap(level)[x][y] == 11) {
 			drawFly(g);
 			drawChoose(g);
 		}
-		if (shopping == true && getMap(level)[x][y] == 29) {
+		if (shopping == true) {
+
 			drawShop(g);
 			drawChooseshop(g, choose3);
 		}
@@ -302,8 +608,88 @@ public class MyPanel extends JPanel implements KeyListener {
 				drawChoosebottle(g, choose2);
 			}
 		}
-
+		gameOver(g);
 	}
+
+	private void gameOver(Graphics g) {
+		if (hero.hp <= 0) {
+			for (int i = 0; i < 15; i++) {
+				for (int j = 0; j < 15; j++) {
+					g.drawImage(gameOverImage, i * CS, j * CS, CS, CS, this);
+				}
+			}
+			g.drawImage(inforPanelImage, HEIGHT, 0, HEIGHT / 2, HEIGHT, this);
+			g.setFont(new Font("Tahoma", Font.BOLD, 50));
+			Color c = new Color(90, 46, 30);
+			g.setColor(c);
+			g.drawString(" YOU", 525, 170);
+			g.drawString(" ARE", 525, 240);
+			g.drawString("DIED", 530, 310);
+			g.drawImage(titlePanelImage, 0, 5 * CS, 15 * CS, 5 * CS, this);
+			g.drawString("     LOSE", 90, 230);
+			g.drawString("GAME OVER", 90, 280);
+		}
+		
+		if(getMap(level)[x][y] == 34 && hero.hp > 0) {
+			ImageIcon icon = new ImageIcon(getClass().getResource("image/g1.png"));
+			Image grass1 = icon.getImage();
+			icon = new ImageIcon(getClass().getResource("image/g2.png"));
+			Image grass2 = icon.getImage();
+			icon = new ImageIcon(getClass().getResource("image/g3.png"));
+			Image grass3 = icon.getImage();
+			icon = new ImageIcon(getClass().getResource("image/b4.png"));
+			Image title = icon.getImage();
+			
+			int[][] win = {
+					{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
+					{3,2,3,2,3,2,3,2,3,2,3,2,3,2,3},
+					{3,3,2,2,3,2,2,3,2,2,3,2,2,3,3},
+					{3,2,1,2,3,2,1,2,3,2,1,2,3,2,3},
+					{3,2,2,1,2,2,1,2,2,1,2,2,1,2,3},
+					{3,3,2,2,1,2,2,1,2,2,1,2,2,1,3},
+					{3,2,1,2,2,1,2,2,1,2,2,1,2,2,3},
+					{3,2,2,1,2,1,2,1,2,1,2,1,2,2,3},
+					{3,2,1,2,2,1,2,2,1,2,2,1,2,2,3},
+					{3,3,2,2,1,2,2,1,2,2,1,2,2,1,3},
+					{3,2,2,1,2,2,1,2,2,1,2,2,1,2,3},
+					{3,2,1,2,3,2,1,2,3,2,1,2,3,2,3},
+					{3,3,2,2,3,2,2,3,2,2,3,2,2,3,3},
+					{3,2,3,2,3,2,3,2,3,2,3,2,3,2,3},
+					{3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}
+					};
+			
+			for (int i = 0; i < win.length; i++) {
+				for (int j = 0; j < win[i].length; j++) {
+					if(win[i][j] == 1){
+						g.drawImage(grass1, i * CS, j * CS, CS, CS, this);
+					}
+					if(win[i][j] == 2){
+						g.drawImage(grass2, i * CS, j * CS, CS, CS, this);
+					}
+					if(win[i][j] == 3){
+						g.drawImage(grass3, i * CS, j * CS, CS, CS, this);
+					}
+				}
+			}
+			g.drawImage(inforPanelImage, HEIGHT, 0, HEIGHT / 2, HEIGHT, this);
+			g.setFont(new Font("Tahoma", Font.BOLD, 50));
+			Color c = new Color(90, 46, 30);
+			g.setColor(c);
+			g.drawString(" YOU", 525, 170);
+			g.drawString(" WIN", 525, 240);
+			
+			g.setFont(new Font("Tahoma", Font.BOLD, 24));
+			g.drawString("designed by L.S.N.", 490, 300);
+			
+			g.setFont(new Font("Tahoma", Font.BOLD, 30));
+			g.setColor(Color.white);
+			g.drawImage(title, 0, 5 * CS, 15 * CS, 5 * CS, this);
+			g.drawString("CONGRATULATIONS!", 90, 230);
+			g.drawString("    Let's Rush Out!", 90, 280);
+			
+		}
+	}
+
 
 	/*
 	 * The following method 'initButton' is for the function: check previous and
@@ -315,38 +701,99 @@ public class MyPanel extends JPanel implements KeyListener {
 	 * Reminder: always close the new frame before operate the HERO or open a new
 	 * window ('focus' problem & redundant windows)
 	 */
+
 	private void initButton() {
-		// Creat a Map Guide Button
-		JButton mapGuide = new JButton(mapPanelImage); // NEED - improve image's quality
+		// Create a Map Guide Button
+		JButton mapGuide = new JButton(mapPanelImage);
+		// Create two add blood Button
+		ImageIcon rbImage = new ImageIcon(getClass().getResource("image/rboold.png"));
+		ImageIcon bbImage = new ImageIcon(getClass().getResource("image/bboold.png"));
+
+		JButton addHp1 = new JButton(rbImage);
+		JButton addHp2 = new JButton(bbImage);
+
 		// Set size & location & appearance
 		this.setLayout(null);
 		mapGuide.setBounds(500, 400, 40, 40);
-		mapGuide.setBorder(null); // NEED - cancel borders and set dynamic display
+		mapGuide.setBorder(null);
 		mapGuide.setMargin(new Insets(0, 0, 0, 0));
 		mapGuide.setContentAreaFilled(false);
 		this.add(mapGuide);
+		addHp1.setBounds(550, 400, 40, 40);
+		addHp1.setBorder(null);
+		addHp1.setMargin(new Insets(0, 0, 0, 0));
+		addHp1.setContentAreaFilled(false);
+		this.add(addHp1);
+		addHp2.setBounds(600, 400, 40, 40);
+		addHp2.setBorder(null);
+		addHp2.setMargin(new Insets(0, 0, 0, 0));
+		addHp2.setContentAreaFilled(false);
+		this.add(addHp2);
 
 		// add action
 		mapGuide.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent a) {
 				// create a new frame
 				JFrame mapGuideFrame = new JFrame("Map Guide");
 				// set this window
-				mapGuideFrame.setSize(300, 400);
+				mapGuideFrame.setSize(500, 355);
 				mapGuideFrame.setVisible(true);
-				mapGuideFrame.setLocationRelativeTo(null);
-				mapGuideFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-				JButton button2 = new JButton("µã»÷ÎÒ");
-				button2.setSize(50, 25);
-				button2.setBorderPainted(false);
-				button2.setLocation(50, 80);
-				button2.setVisible(true);
-				mapGuideFrame.add(button2);
+				mapGuideFrame.setLocation(324, 174);
+				buttonPanel panel = new buttonPanel();
+				Container contentPane = mapGuideFrame.getContentPane();
+				contentPane.add(panel);
+
 				focus();
 			}
 		});
+
+		// add action
+		addHp1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent a) {
+				// add blood
+//				hero.hp = hero.hp + 300;
+				usebottle(1);
+				focus();
+			}
+		});
+		
+		// add action
+		addHp1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent a) {
+				// add blood
+//				hero.hp += 500;
+				usebottle(2);
+				focus();
+			}
+		});
+		
+		
+		/*private void usebottle(int i) {
+		if (i == 1) {
+			if (hero.redbottle == 0) {
+				System.out.println("no redbotttle");
+				hero.printstate();
+			} else {
+				hero.hp = hero.hp + 300;
+				hero.redbottle = hero.redbottle - 1;
+				hero.printstate();
+			}
+		}
+		if (i == 2) {
+			if (hero.bluebottle == 0) {
+				System.out.println("no bluebotttle");
+				hero.printstate();
+			} else {
+				hero.hp = hero.hp + 500;
+				hero.bluebottle = hero.bluebottle - 1;
+				hero.printstate();
+			}
+		}
+
+	}*/
 	}
 
 	/*
@@ -380,7 +827,7 @@ public class MyPanel extends JPanel implements KeyListener {
 		g.setFont(new Font("Tahoma", Font.BOLD, 24));
 		Color c = new Color(90, 46, 30);
 		g.setColor(c);
-		g.drawString("  MAP LEVEL  " + String.valueOf(level), 500, 50);
+		g.drawString("  MAP LEVEL  " + String.valueOf(level + 1), 500, 50);
 		c = new Color(255, 215, 0);
 		g.setColor(c);
 		g.drawString(String.valueOf(hero.yellowkey), locationX + space, locationY + 25);
@@ -396,16 +843,8 @@ public class MyPanel extends JPanel implements KeyListener {
 		g.drawString(String.valueOf(hero.money), locationX + space, locationY + 30 * 7 - 5);
 		g.drawString(String.valueOf(hero.experience), locationX + space, locationY + 30 * 8 - 5);
 		g.drawString(String.valueOf(hero.attack), locationX + space, locationY + 30 * 9 - 5);
-		g.drawString(String.valueOf(hero.experience), locationX + space, locationY + 30 * 10 - 5);
+		g.drawString(String.valueOf(hero.defence), locationX + space, locationY + 30 * 10 - 5);
 
-	}
-
-	private void gameOver(Graphics g) {
-		if (hero.hp <= 0) {
-			int c = 0;
-			while (c != 15)
-				g.drawImage(gameOverImage, c * CS, c * CS, CS, CS, this);
-		}
 	}
 
 	private void drawChooseshop(Graphics g, int choose3) {
@@ -458,40 +897,48 @@ public class MyPanel extends JPanel implements KeyListener {
 	}
 
 	private void drawFight(Graphics g, int num) {
-		String string6 = new String("V--S");
-//		g.setColor(Color.WHITE);
-//		g.fillRect(3 * CS, 2 * CS, 5 * CS, 5 * CS);
-//		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
-//		g.setColor(Color.BLACK);
-//		g.drawString(string6, 5 * CS, 4 * CS - 10);
-//		g.drawImage(heroImage, 3 * CS, 3 * CS, CS, CS, this);
-//		g.setColor(Color.BLACK);
-//		g.drawRoundRect(3 * CS, 2 * CS, 5 * CS, 5 * CS, 10, 10);
-//		g.drawRoundRect(3 * CS - 2, 2 * CS - 2, 5 * CS + 2, 5 * CS + 2, 15, 15);
-//		g.drawRoundRect(3 * CS - 3, 2 * CS - 3, 5 * CS + 4, 5 * CS + 4, 15, 15);
-//		g.drawRoundRect(3 * CS - 4, 2 * CS - 4, 5 * CS + 6, 5 * CS + 6, 15, 15);
-		g.drawImage(inforPanelImage, 0, 5*CS, 15*CS, 5*CS, this);
-		g.drawImage(heroDisplayImage, CS, 7*CS, 48, 48, this);
+
+		ImageIcon icon = new ImageIcon(getClass().getResource("fightImage/1-14.png"));
+		Image m1 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/2-17.png"));
+		Image m2 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/3-18.png"));
+		Image m3 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/4-19.png"));
+		Image m4 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/5-20.png"));
+		Image m5 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/6-21.png"));
+		Image m6 = icon.getImage();
+		icon = new ImageIcon(getClass().getResource("fightImage/7-22.png"));
+		Image m7 = icon.getImage();
+
+		g.drawImage(titlePanelImage, 0, 5 * CS, 15 * CS, 5 * CS, this);
+		g.drawImage(heroDisplayImage, 2 * CS, 7 * CS - 15, 48, 48, this);
+		g.setFont(new Font("Tahoma", Font.BOLD, 40));
+		Color c = new Color(90, 46, 30);
+		g.setColor(c);
+		g.drawString("VS", 6 * CS + 15, 8 * CS - 3);
 		if (num == 14) {
-			g.drawImage(M1Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m1, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 		if (num == 17) {
-			g.drawImage(M2Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m2, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 		if (num == 18) {
-			g.drawImage(M3Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m3, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 		if (num == 19) {
-			g.drawImage(M4Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m4, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 		if (num == 20) {
-			g.drawImage(M5Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m5, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 		if (num == 21) {
-			g.drawImage(M6Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m6, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 		if (num == 22) {
-			g.drawImage(M7Image, 13 * CS, 7 * CS, CS, CS, this);
+			g.drawImage(m7, 11 * CS, 7 * CS - 15, 48, 48, this);
 		}
 
 	}
@@ -550,22 +997,27 @@ public class MyPanel extends JPanel implements KeyListener {
 		String string4 = new String("");
 		String string5 = new String("");
 		String string6 = new String("");
+		String string7 = new String("");
+		String string8 = new String("");
+		String string9 = new String("");
 
-		g.setColor(Color.BLACK);
-		g.fillRect(60, 45, 150, 200);
-		g.setColor(Color.RED);
+		Color c = new Color(90, 46, 30);
+		g.setColor(c);
+		g.fillRect(60, 45, 150, 240);
+		g.setColor(Color.GRAY);
 
-		g.drawRoundRect(60, 45, 150, 200, 10, 10);
-		g.drawRoundRect(59, 44, 152, 202, 10, 10);
-		g.drawRoundRect(58, 43, 154, 204, 10, 10);
-		g.drawRoundRect(57, 42, 156, 206, 10, 10);
+		g.drawRoundRect(60, 45, 150, 240, 10, 10);
+		g.drawRoundRect(59, 44, 152, 242, 10, 10);
+		g.drawRoundRect(58, 43, 154, 244, 10, 10);
+		g.drawRoundRect(57, 42, 156, 246, 10, 10);
+		g.drawRoundRect(56, 41, 158, 248, 10, 10);
 		g.setFont(new Font("TimesRoman", Font.BOLD, 15));
 		string1 = " exit";
-		string2 = "level 0";
-		string3 = "level 1";
-		string4 = "level 2";
-		string5 = "level 3";
-
+		string2 = "level 1";
+		string3 = "level 2";
+		string4 = "level 3";
+		string5 = "level 4";
+        string6 = "level 8";
 		g.setColor(Color.GREEN);
 
 		g.setColor(Color.WHITE);
@@ -576,7 +1028,7 @@ public class MyPanel extends JPanel implements KeyListener {
 		g.drawString(string4, 90, 185);
 		g.drawString(string5, 90, 225);
 		g.drawString(string6, 90, 265);
-		if (choose == 6) {
+		if (choose == 7) {
 			choose = 1;
 		}
 
@@ -854,6 +1306,21 @@ public class MyPanel extends JPanel implements KeyListener {
 			hero.redkey = 999;
 			break;
 
+		/*
+		 * LoserMode is for testing game over condition
+		 */
+		case KeyEvent.VK_L:
+			System.out.println("Loser mode");
+			hero.hp = 10;
+			hero.attack = 0;
+			hero.defence = 0;
+			hero.money = 0;
+			hero.experience = 0;
+			hero.yellowkey = 0;
+			hero.bluekey = 0;
+			hero.redkey = 0;
+			break;
+
 		case KeyEvent.VK_LEFT:
 			sound.playSound();
 			move(LEFT);
@@ -897,6 +1364,12 @@ public class MyPanel extends JPanel implements KeyListener {
 					sound1.playSound();
 					choose(5);
 				}
+				if (choose == 6) {
+					sound1.playSound();
+					choose(6);
+				}
+				
+				
 
 			}
 			if (pack == 2 && usingpackage == true) {
@@ -913,7 +1386,7 @@ public class MyPanel extends JPanel implements KeyListener {
 				}
 
 			}
-			if (getMap(level)[x][y] == 29) {
+			if (shopping) {
 				SoundPlayer sound1 = new SoundPlayer();
 
 				sound1.loadSound("mota/choosing.wav");
@@ -931,18 +1404,11 @@ public class MyPanel extends JPanel implements KeyListener {
 				}
 			}
 			break;
-		case KeyEvent.VK_3:
+		case KeyEvent.VK_P:
 
 			openPackage(pack);
 			break;
 
-		/*
-		 * case hoose==.VK_1: level = changeLevel(1);
-		 * 
-		 * break; case KeyEvent.VK_0: level = changeLevel(0);
-		 * 
-		 * break;
-		 */
 		}
 		repaint();
 		if (x == 7 && y == 0) {
@@ -1009,11 +1475,11 @@ public class MyPanel extends JPanel implements KeyListener {
 			}
 		}
 		// level 5 -> level 6
-		if ((x == 3 && y == 11) || (x == 11 && y == 11)) {
+		if ((x == 3 && y == 9) || (x == 11 && y == 9)) {
 			if (level == 5) {
 				level = level + 1;
-				x = 2;
-				y = 13;
+				x = 12;
+				y = 1;
 			}
 		}
 		// level 5 -> level 4
@@ -1025,19 +1491,26 @@ public class MyPanel extends JPanel implements KeyListener {
 			}
 		}
 		// level 6 -> level 7
-		if (x == 13 && y == 13) {
+		if (x == 1 && y == 13) {
 			if (level == 6) {
 				level = level + 1;
-				x = 7;
-				y = 2;
+				x = 8;
+				y = 13;
 			}
 		}
 		// level 6 -> level 5
-		if (x == 1 && y == 1) {
+		if (x == 13 && y == 1) {
 			if (level == 6) {
 				level = level - 1;
-				x = 2;
-				y = 7;
+				x = 8;
+				y = 13;
+			}
+		}
+		if (x == 7 && y == 13) {
+			if (level == 7) {
+				level = level - 1;
+				x = 1;
+				y = 13;
 			}
 		}
 	}
@@ -1200,6 +1673,15 @@ public class MyPanel extends JPanel implements KeyListener {
 			y = 13;
 		}
 			break;
+		case 6: {
+			ischoose = false;
+			showfly = false;
+			canmove = true;
+			level = 7;
+			x = 8;
+			y = 13;
+		}
+			break;
 		default:
 			break;
 		}
@@ -1229,11 +1711,20 @@ public class MyPanel extends JPanel implements KeyListener {
 
 		sound.loadSound("mota/choosing.wav");
 
-		if (getMap(level)[x][y] == 1 || getMap(level)[x][y] == 27) {
+		if (getMap(level)[x][y] == 1 || getMap(level)[x][y] == 27||getMap(level)[x][y] == 31) {
 			return false;
 		}
 		if (getMap(level)[x][y] == 6) {
-			JOptionPane.showMessageDialog(this, "Please save our Princess, Warroir");
+			JOptionPane.showMessageDialog(this,
+					"OoPs!  >_<  It's NOT NICE to see you here  >_<  " + '\n' + "You are stuck on this deserted island."
+							+ '\n' + "Fortunately, you could find Miss.S and ask her to guide you out of here!" + '\n'
+							+ "However, this is an dangerous island, lots of monsters will attack you." + '\n'
+							+ "Go! Begin your adventure! GOOD LUCK and BE CAREFUL" + '\n'
+							+ "____________________________________________________________________________" + '\n'
+							+ "Reminder: " + '\n'
+							+ "CLICK MAP BUTTON: to konw monsters and props that are waiting for you" + '\n'
+							+ "PRESS 'J': confirm choice" + '\n' + "PRESS 'P': open your package" + '\n'
+							+ "PRESS '3': close windows");
 			getMap(level)[x][y] = 0;
 		}
 		if (getMap(level)[x][y] == 11) {
@@ -1324,6 +1815,16 @@ public class MyPanel extends JPanel implements KeyListener {
 			shop();
 
 		}
+		if (getMap(level)[x][y] == 32) {
+			if (hero.bluekey != 0&&hero.redkey!=0 &&hero.yellowkey!=0 ) {
+				hero.keychange(10);
+				hero.keychange(9);
+				hero.keychange(8);
+				getMap(level)[x][y] = 0;
+			} else {
+				return false;
+			}
+		}
 		// for sword and shield in level 5
 		if (getMap(level)[x][y] == 25) {
 			hero.attack += 50;
@@ -1341,6 +1842,10 @@ public class MyPanel extends JPanel implements KeyListener {
 			hero.defence += 20;
 			getMap(level)[x][y] = 0;
 		}
+		if (getMap(level)[x][y] == 33) {
+			
+			getMap(level)[x][y] = 0;
+		}
 		return true;
 	}
 
@@ -1348,10 +1853,11 @@ public class MyPanel extends JPanel implements KeyListener {
 		JOptionPane.showMessageDialog(this, "You can buy something");
 		ischoose = true;
 		shopping = true;
+		y++;
 	}
 
 	private void fight(int x) {
-		JOptionPane.showMessageDialog(this, "Fight begin ");
+		JOptionPane.showMessageDialog(this, "Fight Begin");
 		fight = true;
 		SoundPlayer sound = new SoundPlayer();
 
@@ -1446,12 +1952,9 @@ public class MyPanel extends JPanel implements KeyListener {
 	}
 
 	public void keyReleased(KeyEvent e) {
-
 	}
 
 	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-
 	}
 
 	static int num = map.length;
@@ -1469,7 +1972,6 @@ public class MyPanel extends JPanel implements KeyListener {
 	}
 
 	public int getLevel(int level) {
-
 		return level;
 	}
 
